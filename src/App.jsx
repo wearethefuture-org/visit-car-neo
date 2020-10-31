@@ -71,6 +71,23 @@ const AboutUs = () => (
   </section>
 );
 
+const Technologies = () => (
+  <section className="technologies">
+    <div className="technologies__container">
+      <h2 className="technologies__title">Technologies</h2>
+      <h3 className="technologies__subtitle">We are working with different modern technologies you can be interested in:</h3>
+
+      <div className="technologies__infocard">
+        {TECHNOLOGIES.map(tech => (
+          <InfoCard {...tech} key={tech.title} />
+        ))}
+      </div>
+
+      <button type="button" className="technologies__contact">Contact us for details</button>
+    </div>
+  </section>
+);
+
 
 
 
@@ -136,25 +153,25 @@ const About = () => (
   </div>
 );
 
-const Technologies = () => (
-  <div className="technologies">
-    <h2 className="technologies__title">Technologies</h2>
-    <Container fluid>
-      <div className="technologies__sub-title">
-        <p>We are working with different modern technologies you can</p>
-        <p>be interested in:</p>
-      </div>
+// const Technologies = () => (
+//   <div className="technologies">
+//     <h2 className="technologies__title">Technologies</h2>
+//     <Container fluid>
+//       <div className="technologies__sub-title">
+//         <p>We are working with different modern technologies you can</p>
+//         <p>be interested in:</p>
+//       </div>
 
-      <Row>
-        {TECHNOLOGIES.map(tech => (
-          <Col xs={12} md={3} key={tech.title}>
-            <InfoCard {...tech} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
-  </div>
-);
+//       <Row>
+//         {TECHNOLOGIES.map(tech => (
+//           <Col xs={12} md={3} key={tech.title}>
+//             <InfoCard {...tech} />
+//           </Col>
+//         ))}
+//       </Row>
+//     </Container>
+//   </div>
+// );
 
 const Developers = () => (
   <div className="developers">
@@ -247,6 +264,7 @@ const App = () => {
     <>
       <Header />
       <AboutUs />
+      <Technologies />
       <AgencyBanner onClickScroller={moveToAbout} />
       <div className="main-page-bg-1">
         <img src="/assets/imgs/Group.png" alt="circles"/>

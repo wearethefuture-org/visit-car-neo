@@ -199,6 +199,55 @@
   }
 }
 
+.technologies {
+  background-color: #3EB17A;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: #fff;
+  text-align: center;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    @include section-title-technology;
+  }
+
+  &__subtitle {
+    @include section-subtitle;
+
+    max-width: 600px;
+  }
+
+  &__infocard {
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__contact {
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 34px;
+    color: #fff;
+    border: 1px solid #fff;
+    background: none;
+    outline: none;
+    padding: 7px 20px;
+    transition: box-shadow .3s ease;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      box-shadow: 0 0 10px rgba(255, 255, 255, .4) inset;
+    }
+  }
+}
+
 
 
 
@@ -407,45 +456,45 @@
   }
 }
 
-.technologies {
-  padding-top: 7rem;
-  color: #fff;
+// .technologies {
+//   padding-top: 7rem;
+//   color: #fff;
 
-  &__title {
-    font-weight: 500;
-    font-size: 45px;
-    text-align: center;
-  }
+//   &__title {
+//     font-weight: 500;
+//     font-size: 45px;
+//     text-align: center;
+//   }
 
-  &__sub-title {
-    margin: 1rem 0 7rem 0;
-    font-weight: 800;
-    text-align: center;
-    font-size: 18px;
-  }
+//   &__sub-title {
+//     margin: 1rem 0 7rem 0;
+//     font-weight: 800;
+//     text-align: center;
+//     font-size: 18px;
+//   }
 
-  @media (max-width: $sm) {
-    padding-top: 4rem;
-  }
+//   @media (max-width: $sm) {
+//     padding-top: 4rem;
+//   }
 
-  [class*="col"] {
-    @media (max-width: $md) {
-      &:nth-child(n + 2) {
-        margin-top: 5rem;
-      }
-    }
+//   [class*="col"] {
+//     @media (max-width: $md) {
+//       &:nth-child(n + 2) {
+//         margin-top: 5rem;
+//       }
+//     }
 
-    @media (min-width: $md) {
-      &:nth-child(3n + 2) {
-        margin: 0 12.5%;
-      }
+//     @media (min-width: $md) {
+//       &:nth-child(3n + 2) {
+//         margin: 0 12.5%;
+//       }
 
-      &:nth-child(n + 4) {
-        margin-top: 5rem;
-      }
-    }
-  }
-}
+//       &:nth-child(n + 4) {
+//         margin-top: 5rem;
+//       }
+//     }
+//   }
+// }
 
 .developers {
   padding: 7rem 0;

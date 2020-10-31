@@ -37,3 +37,13 @@ $xl: 1200px;
 	margin: 20px auto 0;
 	max-width: 435px;
 }
+
+@mixin section-title-technology {
+	@include section-title;
+
+	color: #fff;
+
+	&:after {
+		background-color: #fff;
+	}
+}
