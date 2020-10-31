@@ -16,6 +16,60 @@ import TECHNOLOGIES from './constants/technologies';
 import DEVELOPERS from './constants/developers';
 import WORKS_WITH from './constants/works-with';
 
+const Header = ({ onClickScroller }) => (
+  <header className="header">
+    <Navigation />
+
+    <div className="header__container">
+      <h1 className="header__title">We Are<br /> the Future</h1>
+      <h2 className="header__subtitle">We Always Make the Idea Better</h2>
+    </div>
+
+    <ReactSVG onClick={onClickScroller} src='/assets/svgs/scroll-down.svg' className="header__scroll" />
+  </header>
+);
+
+const Navigation = () => (
+  <nav className="navigation">
+    <div className="navigation__container">
+      <a href="/" className="navigation__logo"><img src="/assets/imgs/navigation__logo.png" alt="Logo" /></a>
+      <a href="/" className="navigation__item navigation__item--is-active">About Us</a>
+      <a href="/" className="navigation__item">Technologies</a>
+      <a href="/" className="navigation__item">Our Team</a>
+      <a href="/" className="navigation__item">Our Clients</a>
+      <a href="/" className="navigation__item">Portfolio</a>
+      <a href="/" className="navigation__item">Contact Us</a>
+    </div>
+  </nav>
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const AgencyBanner = ({ onClickScroller }) => (
   <div className="agency-banner">
     <h1 className="agency-banner__title">We Are the Future</h1>
@@ -163,6 +217,7 @@ const App = () => {
 
   return (
     <>
+      <Header />
       <AgencyBanner onClickScroller={moveToAbout} />
       <div className="main-page-bg-1">
         <img src="/assets/imgs/Group.png" alt="circles"/>
