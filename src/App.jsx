@@ -43,6 +43,34 @@ const Navigation = () => (
   </nav>
 );
 
+const AboutUs = () => (
+  <section className="about-us">
+    <div className="about-us__container">
+      <h2 className="about-us__title">About Us</h2>
+      <h3 className="about-us__subtitle">Ambitious Ukrainian IT company, starting the path of digital transformation of your ideas</h3>
+
+      <div className="about-us__inner">
+        <div className="about-us__description">
+          <p className="about-us__paragraph">We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs.</p>
+          <div className="about-us__info">
+            <div className="about-us__year">10+</div>
+            <p className="about-us__paragraph about-us__paragraph--shifted">of true professionals with solid technical background in different domains - <span className="about-us__bold">SaaS applications, complex web projects, DevOps solutions.</span></p>
+          </div>
+        </div>
+        <img src="/assets/imgs/we-can-better.jpg" alt="We can Better" className="about-us__img" />
+      </div>
+
+      <div className="about-us__quote">
+        <span>“</span>
+        <div>
+          <div className="about-us__italic">The best way to predict the future is to create it</div>
+          <div>Alan Kay</div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 
 
 
@@ -218,6 +246,7 @@ const App = () => {
   return (
     <>
       <Header />
+      <AboutUs />
       <AgencyBanner onClickScroller={moveToAbout} />
       <div className="main-page-bg-1">
         <img src="/assets/imgs/Group.png" alt="circles"/>

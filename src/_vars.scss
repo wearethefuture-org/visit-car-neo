@@ -10,3 +10,30 @@ $xl: 1200px;
 	padding: 0 15px;
 	margin: 0 auto;
 }
+
+@mixin section-title {
+	font-weight: 300;
+	font-size: 40px;
+	line-height: 48px;
+	text-align: center;
+	color: #242424;
+	position: relative;
+
+	&:after {
+		content: '';
+		width: 60px;
+		height: 1px;
+		background-color: #3EB17A;
+		display: block;
+		margin: 20px auto 0;
+	}
+}
+
+@mixin section-subtitle {
+	font-weight: 200;
+	font-size: 26px;
+	line-height: 38px;
+	text-align: center;
+	margin: 20px auto 0;
+	max-width: 435px;
+}
