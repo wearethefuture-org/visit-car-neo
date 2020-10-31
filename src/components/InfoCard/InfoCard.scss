@@ -1,0 +1,66 @@
+@mixin info-card-theme(
+  $color,
+  $icon-border-color,
+  $icon-background-color,
+) {
+  .info-card__icon {
+    border: 1px solid $icon-border-color;
+    background: $icon-background-color;
+
+    svg {
+      fill: $color;
+    }
+  }
+
+  .info-card__title {
+    color: $color;
+  }
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    padding: 20px;
+    border-radius: 50%;
+  }
+
+  &__title {
+    margin: 20px 0 30px 0;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &__text {
+    text-align: justify;
+    color: #002406;
+  }
+
+  &--green {
+    @include info-card-theme(
+      #00F0B5,
+      rgba(0, 240, 181, 0.5),
+      rgba(0, 240, 181, 0.35)
+    );
+  }
+
+  &--pink {
+    @include info-card-theme(
+      #F61067,
+      rgba(246, 16, 103, 0.5),
+      rgba(246, 16, 103, 0.35),
+    );
+  }
+
+  &--orange {
+    @include info-card-theme(
+      #F67110,
+      rgba(246, 113, 16, 0.5),
+      rgba(246, 113, 16, 0.35),
+    );
+  }
+}

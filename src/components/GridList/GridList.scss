@@ -1,0 +1,50 @@
+@import "../../vars";
+
+$border: 1px solid rgba($color: #fff, $alpha: .5);
+
+.grid-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @media (max-width: $sm) {
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    padding: 50px;
+
+    @media (max-width: $sm) {
+      &:nth-child(n + 2) {
+        border-top: $border;
+      }
+    }
+
+    @media (min-width: $sm) {
+      &:nth-child(n + 4) {
+        border-top: $border;
+      }
+
+      &:nth-child(3n + 1) {
+        border-right: $border;
+      }
+
+      &:nth-child(3n) {
+        border-left: $border;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: normal;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 15px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+}

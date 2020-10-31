@@ -1,0 +1,40 @@
+@import "../../vars";
+
+.footer {
+  background-color: #002406;
+
+  &__inner {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    font-size: 15px;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__logo h1 {
+    margin-top: 4px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: normal;
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+  }
+
+  @media (max-width: $sm) {
+    &__inner {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    &__text {
+      margin-bottom: 20px;
+    }
+  }
+}
