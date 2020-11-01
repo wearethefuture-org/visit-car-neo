@@ -21,6 +21,7 @@
     "react-scripts": "3.4.1",
     "react-svg": "^11.0.32",
     "reactstrap": "^8.6.0",
+    "swiper": "^6.3.5",
     "yup": "^0.29.3"
   },
   "scripts": {

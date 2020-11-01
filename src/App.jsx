@@ -1,24 +1,31 @@
 import React from 'react';
 import { ReactSVG } from 'react-svg';
+import SwiperCore, { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './App.scss';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
 
 import InfoCard from './components/InfoCard/InfoCard';
 import PersonCard from './components/PersonCard/PersonCard';
 import GridList from './components/GridList/GridList';
 import ContactForm from './components/ContactForm/ContactForm';
-import Popup from './components/Popup/Popup';
+import PortfolioItem from './components/PortfolioItem/PortfolioItem';
 import Footer from './components/Footer/Footer';
 
 import TECHNOLOGIES from './constants/technologies';
 import DEVELOPERS from './constants/developers';
 import WORKS_WITH from './constants/works-with';
+import PORTFOLIO from './constants/portfolio';
+
+SwiperCore.use([Navigation]);
 
 const Header = ({ onClickScroller }) => (
   <header className="header">
-    <Navigation />
+    <TopMenu />
 
     <div className="header__container">
       <h1 className="header__title">We Are<br /> the Future</h1>
@@ -29,7 +36,7 @@ const Header = ({ onClickScroller }) => (
   </header>
 );
 
-const Navigation = () => (
+const TopMenu = () => (
   <nav className="navigation">
     <div className="navigation__container">
       <a href="/" className="navigation__logo"><img src="/assets/imgs/navigation__logo.png" alt="Logo" /></a>
@@ -86,6 +93,87 @@ const Technologies = () => (
       <button type="button" className="technologies__contact">Contact us for details</button>
     </div>
   </section>
+);
+
+const Portfolio = () => (
+  <div className="portfolio">
+    <div className="portfolio__container">
+      <h2 className="portfolio__title">Portfolio</h2>
+
+      <div className="portfolio__inner">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
+          loop
+          breakpoints={{
+            980: {
+              slidesPerView: 2
+            }
+          }}
+        >
+          {PORTFOLIO.map(item => (
+            <SwiperSlide className="portfolio-item" key={item.title}>
+              <PortfolioItem {...item}
+                popupSiteLink="https://carswork.com"
+                popupSiteLogo="/assets/imgs/laptop2.png"
+                popupMissionTextFirst="We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs."
+                popupMissionTextSecond="We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs."
+                popupTechnologiesDB="PostgreSQL / MongoDB / MySQL / DynamoDb / Elasticsearch / Redis"
+                popupTechnologiesGeneral="OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)"
+                popupTechnologiesFE="Angular (Typescript) & React & Net.JS Frameworks / HTML / CSS (SCSS, LESS, bootstrap, angular material), Javascript (ES6 - ES9)"
+                popupTechnologiesBE="Node.js (Koa, express, meteor, hapi, sails, nestjs)"
+              />
+            </SwiperSlide>
+          ))}
+
+          <div className="swiper-button-next"><ReactSVG src='/assets/svgs/next-arrow.svg' /></div>
+          <div className="swiper-button-prev"><ReactSVG src='/assets/svgs/prev-arrow.svg' /></div>
+        </Swiper>
+      </div>
+    </div>
+
+
+    {/*<Container fluid>
+      <Row style={{ justifyContent: 'center' }}>
+        <Col xs={12} sm={{ span: 4 }} className="portfolio-item">
+          <img
+            src="/assets/imgs/portfolio/carswork.png"
+            alt="carswork"
+            className="portfolio-item__img"
+          />
+          <h2 className="portfolio-item__title">Carswork</h2>
+          <Popup 
+            popupTitle="Cars work"
+            popupSiteLink="https://carswork.com"
+            popupSiteLogo="/assets/imgs/laptop2.png"
+            popupMissionTextFirst="We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs."
+            popupMissionTextSecond="We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs."
+            popupTechnologiesDB="PostgreSQL / MongoDB / MySQL / DynamoDb / Elasticsearch / Redis"
+            popupTechnologiesGeneral="OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)"
+            popupTechnologiesFE="Angular (Typescript) & React & Net.JS Frameworks / HTML / CSS (SCSS, LESS, bootstrap, angular material), Javascript (ES6 - ES9)"
+            popupTechnologiesBE="Node.js (Koa, express, meteor, hapi, sails, nestjs)"
+          />
+        </Col>
+        <Col xs={12} sm={{ span: 4, offset: 2 }} className="portfolio-item">
+          <img
+            src="https://stage.connectoro.io/assets/images/logos/fuse.svg"
+            alt="connectoro"
+            className="portfolio-item__img"
+          />
+          <h2 className="portfolio-item__title">Connectoro</h2>
+          <a href="https://app.connectoro.io" rel="noopener noreferrer" target="_blank">
+            <button className="btn portfolio-item__btn">
+              Open
+            </button>
+          </a>
+        </Col>
+      </Row>
+    </Container>*/}
+  </div>
 );
 
 
@@ -210,47 +298,47 @@ const Contact = () => (
   </div>
 );
 
-const Portfolio = () => (
-  <div className="portfolio">
-    <Container fluid>
-      <h2 className="portfolio__title">Portfolio</h2>
-      <Row style={{ justifyContent: 'center' }}>
-        <Col xs={12} sm={{ span: 4 }} className="portfolio-item">
-          <img
-            src="/assets/imgs/portfolio/carswork.png"
-            alt="carswork"
-            className="portfolio-item__img"
-          />
-          <h2 className="portfolio-item__title">Carswork</h2>
-          <Popup 
-            popupTitle="Cars work"
-            popupSiteLink="https://carswork.com"
-            popupSiteLogo="/assets/imgs/laptop2.png"
-            popupMissionTextFirst="We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs."
-            popupMissionTextSecond="We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs."
-            popupTechnologiesDB="PostgreSQL / MongoDB / MySQL / DynamoDb / Elasticsearch / Redis"
-            popupTechnologiesGeneral="OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)"
-            popupTechnologiesFE="Angular (Typescript) & React & Net.JS Frameworks / HTML / CSS (SCSS, LESS, bootstrap, angular material), Javascript (ES6 - ES9)"
-            popupTechnologiesBE="Node.js (Koa, express, meteor, hapi, sails, nestjs)"
-          />
-        </Col>
-        <Col xs={12} sm={{ span: 4, offset: 2 }} className="portfolio-item">
-          <img
-            src="https://stage.connectoro.io/assets/images/logos/fuse.svg"
-            alt="connectoro"
-            className="portfolio-item__img"
-          />
-          <h2 className="portfolio-item__title">Connectoro</h2>
-          <a href="https://app.connectoro.io" rel="noopener noreferrer" target="_blank">
-            <button className="btn portfolio-item__btn">
-              Open
-            </button>
-          </a>
-        </Col>
-      </Row>
-    </Container>
-  </div>
-);
+// const Portfolio = () => (
+//   <div className="portfolio">
+//     <Container fluid>
+//       <h2 className="portfolio__title">Portfolio</h2>
+//       <Row style={{ justifyContent: 'center' }}>
+//         <Col xs={12} sm={{ span: 4 }} className="portfolio-item">
+//           <img
+//             src="/assets/imgs/portfolio/carswork.png"
+//             alt="carswork"
+//             className="portfolio-item__img"
+//           />
+//           <h2 className="portfolio-item__title">Carswork</h2>
+//           <Popup 
+//             popupTitle="Cars work"
+//             popupSiteLink="https://carswork.com"
+//             popupSiteLogo="/assets/imgs/laptop2.png"
+//             popupMissionTextFirst="We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs."
+//             popupMissionTextSecond="We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs."
+//             popupTechnologiesDB="PostgreSQL / MongoDB / MySQL / DynamoDb / Elasticsearch / Redis"
+//             popupTechnologiesGeneral="OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)"
+//             popupTechnologiesFE="Angular (Typescript) & React & Net.JS Frameworks / HTML / CSS (SCSS, LESS, bootstrap, angular material), Javascript (ES6 - ES9)"
+//             popupTechnologiesBE="Node.js (Koa, express, meteor, hapi, sails, nestjs)"
+//           />
+//         </Col>
+//         <Col xs={12} sm={{ span: 4, offset: 2 }} className="portfolio-item">
+//           <img
+//             src="https://stage.connectoro.io/assets/images/logos/fuse.svg"
+//             alt="connectoro"
+//             className="portfolio-item__img"
+//           />
+//           <h2 className="portfolio-item__title">Connectoro</h2>
+//           <a href="https://app.connectoro.io" rel="noopener noreferrer" target="_blank">
+//             <button className="btn portfolio-item__btn">
+//               Open
+//             </button>
+//           </a>
+//         </Col>
+//       </Row>
+//     </Container>
+//   </div>
+// );
 
 const App = () => {
   const moveToAbout = () => {
@@ -265,18 +353,19 @@ const App = () => {
       <Header />
       <AboutUs />
       <Technologies />
+      <Portfolio />
       <AgencyBanner onClickScroller={moveToAbout} />
       <div className="main-page-bg-1">
         <img src="/assets/imgs/Group.png" alt="circles"/>
         <About />
-        <Technologies />
+        // <Technologies />
       </div>
       <div className="main-page-bg-3">
         <img src="/assets/imgs/Group.png" alt=""/>
         <Developers />
         <WorkWith />
       </div>
-      <Portfolio />
+      // <Portfolio />
       <Contact />
       <Footer />
     </>
