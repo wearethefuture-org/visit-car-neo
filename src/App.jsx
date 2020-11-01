@@ -11,7 +11,6 @@ import 'swiper/components/navigation/navigation.scss';
 
 import InfoCard from './components/InfoCard/InfoCard';
 import PersonCard from './components/PersonCard/PersonCard';
-import GridList from './components/GridList/GridList';
 import ContactForm from './components/ContactForm/ContactForm';
 import PortfolioItem from './components/PortfolioItem/PortfolioItem';
 import Footer from './components/Footer/Footer';
@@ -126,44 +125,28 @@ const Portfolio = () => (
         </Swiper>
       </div>
     </div>
+  </div>
+);
 
+const WorkWith = () => (
+  <div className="work-with">
+    <div className="work-with__container">
+      <div className="work-with__inner">
+        <div className="work-with__part">
+          <h2 className="work-with__title">Building better solutions to improve product</h2>
+          <div className="work-with__subtitle">we work with</div>
+        </div>
 
-    {/*<Container fluid>
-      <Row style={{ justifyContent: 'center' }}>
-        <Col xs={12} sm={{ span: 4 }} className="portfolio-item">
-          <img
-            src="/assets/imgs/portfolio/carswork.png"
-            alt="carswork"
-            className="portfolio-item__img"
-          />
-          <h2 className="portfolio-item__title">Carswork</h2>
-          <Popup 
-            popupTitle="Cars work"
-            popupSiteLink="https://carswork.com"
-            popupSiteLogo="/assets/imgs/laptop2.png"
-            popupMissionTextFirst="We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs."
-            popupMissionTextSecond="We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs."
-            popupTechnologiesDB="PostgreSQL / MongoDB / MySQL / DynamoDb / Elasticsearch / Redis"
-            popupTechnologiesGeneral="OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)"
-            popupTechnologiesFE="Angular (Typescript) & React & Net.JS Frameworks / HTML / CSS (SCSS, LESS, bootstrap, angular material), Javascript (ES6 - ES9)"
-            popupTechnologiesBE="Node.js (Koa, express, meteor, hapi, sails, nestjs)"
-          />
-        </Col>
-        <Col xs={12} sm={{ span: 4, offset: 2 }} className="portfolio-item">
-          <img
-            src="https://stage.connectoro.io/assets/images/logos/fuse.svg"
-            alt="connectoro"
-            className="portfolio-item__img"
-          />
-          <h2 className="portfolio-item__title">Connectoro</h2>
-          <a href="https://app.connectoro.io" rel="noopener noreferrer" target="_blank">
-            <button className="btn portfolio-item__btn">
-              Open
-            </button>
-          </a>
-        </Col>
-      </Row>
-    </Container>*/}
+        <div className="work-with__box">
+          {WORKS_WITH.map(item => (
+            <div className="work-with__item" key={item.title}>
+              <div className="work-with__caption">{ item.title }</div>
+              <div className="work-with__text">{ item.text }</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   </div>
 );
 
@@ -269,14 +252,14 @@ const Developers = () => (
   </div>
 );
 
-const WorkWith = () => (
-  <div className="work-with">
-    <Container fluid>
-      <h2 className="work-with__title">Who we work with</h2>
-      <GridList items={WORKS_WITH} />
-    </Container>
-  </div>
-);
+// const WorkWith = () => (
+//   <div className="work-with">
+//     <Container fluid>
+//       <h2 className="work-with__title">Who we work with</h2>
+//       <GridList items={WORKS_WITH} />
+//     </Container>
+//   </div>
+// );
 
 const Contact = () => (
   <div className="contact-us">
@@ -345,6 +328,7 @@ const App = () => {
       <AboutUs />
       <Technologies />
       <Portfolio />
+      <WorkWith />
       <AgencyBanner onClickScroller={moveToAbout} />
       <div className="main-page-bg-1">
         <img src="/assets/imgs/Group.png" alt="circles"/>
@@ -354,7 +338,7 @@ const App = () => {
       <div className="main-page-bg-3">
         <img src="/assets/imgs/Group.png" alt=""/>
         <Developers />
-        <WorkWith />
+        //<WorkWith />
       </div>
       // <Portfolio />
       <Contact />
