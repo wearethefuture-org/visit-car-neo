@@ -1,0 +1,275 @@
+import React, { useState } from 'react';
+import { ReactSVG } from 'react-svg';
+import SwiperCore, { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Link, animateScroll as scroll } from "react-scroll";
+import './App.scss';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+
+import InfoCard from './components/InfoCard/InfoCard';
+import PersonCard from './components/PersonCard/PersonCard';
+import ContactForm from './components/ContactForm/ContactForm';
+import PortfolioItem from './components/PortfolioItem/PortfolioItem';
+import Footer from './components/Footer/Footer';
+
+import TECHNOLOGIES from './constants/technologies';
+import DEVELOPERS from './constants/developers';
+import WORKS_WITH from './constants/works-with';
+import PORTFOLIO from './constants/portfolio';
+
+SwiperCore.use([Navigation]);
+
+const Header = ({ onClickScroller }) => (
+  <header className="header" id="header">
+    <TopMenu />
+
+    <div className="header__container">
+      <h1 className="header__title">We Are<br /> the Future</h1>
+      <h2 className="header__subtitle">We Always Make the Idea Better</h2>
+    </div>
+
+    <ReactSVG onClick={onClickScroller} src='/assets/svgs/scroll-down.svg' className="header__scroll" />
+  </header>
+);
+
+const TopMenu = () => {
+  const [navbar, setNavbar] = useState(false);
+  const changeBackground = () => {
+    if(window.scrollY >= 112) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  }
+
+  window.addEventListener('scroll', changeBackground);
+
+  return (
+    <nav className={navbar ? 'navigation navigation--is-active' : 'navigation'}>
+      <div className="navigation__container">
+        <Link
+          className="navigation__logo"
+          to="header"
+          spy={true}
+          smooth={true}
+          offset={-112}
+          duration={500}
+        >
+          <img src={navbar ? '/assets/svgs/logos/footer-logo.svg' : '/assets/imgs/navigation__logo.png'} alt="Logo" />
+        </Link>
+
+        <Link
+          className="navigation__item"
+          activeClass="navigation__item--is-active"
+          to="about-us"
+          spy={true}
+          smooth={true}
+          offset={-112}
+          duration={500}
+        >About Us</Link>
+
+        <Link
+          className="navigation__item"
+          activeClass="navigation__item--is-active"
+          to="technologies"
+          spy={true}
+          smooth={true}
+          offset={-112}
+          duration={500}
+        >Technologies</Link>
+
+        <Link
+          className="navigation__item"
+          activeClass="navigation__item--is-active"
+          to="portfolio"
+          spy={true}
+          smooth={true}
+          offset={-112}
+          duration={500}
+        >Portfolio</Link>
+
+        <Link
+          className="navigation__item"
+          activeClass="navigation__item--is-active"
+          to="work-with"
+          spy={true}
+          smooth={true}
+          offset={-112}
+          duration={500}
+        >Our Clients</Link>
+
+        <Link
+          className="navigation__item"
+          activeClass="navigation__item--is-active"
+          to="team"
+          spy={true}
+          smooth={true}
+          offset={-250}
+          duration={500}
+        >Our Team</Link>
+
+        <Link
+          className="navigation__item"
+          activeClass="navigation__item--is-active"
+          to="contact-us"
+          spy={true}
+          smooth={true}
+          offset={-390}
+          duration={500}
+        >Contact Us</Link>
+      </div>
+    </nav>
+  );
+};
+
+const AboutUs = () => (
+  <section className="about-us" id="about-us">
+    <div className="about-us__container">
+      <h2 className="about-us__title">About Us</h2>
+      <h3 className="about-us__subtitle">Ambitious Ukrainian IT company, starting the path of digital transformation of your ideas</h3>
+
+      <div className="about-us__inner">
+        <div className="about-us__description">
+          <p className="about-us__paragraph">We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs.</p>
+          <div className="about-us__info">
+            <div className="about-us__year">10+</div>
+            <p className="about-us__paragraph about-us__paragraph--shifted">of true professionals with solid technical background in different domains - <span className="about-us__bold">SaaS applications, complex web projects, DevOps solutions.</span></p>
+          </div>
+        </div>
+        <img src="/assets/imgs/we-can-better.jpg" alt="We can Better" className="about-us__img" />
+      </div>
+
+      <div className="about-us__quote">
+        <span>“</span>
+        <div>
+          <div className="about-us__italic">The best way to predict the future is to create it</div>
+          <div>Alan Kay</div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const Technologies = () => (
+  <section className="technologies" id="technologies">
+    <div className="technologies__container">
+      <h2 className="technologies__title">Technologies</h2>
+      <h3 className="technologies__subtitle">We are working with different modern technologies you can be interested in:</h3>
+
+      <div className="technologies__infocard">
+        {TECHNOLOGIES.map(tech => (
+          <InfoCard {...tech} key={tech.title} />
+        ))}
+      </div>
+
+      <button type="button" className="technologies__contact" onClick={() => scroll.scrollToBottom()}>Contact us for details</button>
+    </div>
+  </section>
+);
+
+const Portfolio = () => (
+  <section className="portfolio" id="portfolio">
+    <div className="portfolio__container">
+      <h2 className="portfolio__title">Portfolio</h2>
+
+      <div className="portfolio__inner">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation={{
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          }}
+          loop
+          breakpoints={{
+            980: {
+              slidesPerView: 2
+            }
+          }}
+        >
+          {PORTFOLIO.map(item => (
+            <SwiperSlide className="portfolio-item" key={item.title}>
+              <PortfolioItem {...item} />
+            </SwiperSlide>
+          ))}
+
+          <div className="swiper-button-next"><ReactSVG src='/assets/svgs/next-arrow.svg' /></div>
+          <div className="swiper-button-prev"><ReactSVG src='/assets/svgs/prev-arrow.svg' /></div>
+        </Swiper>
+      </div>
+    </div>
+  </section>
+);
+
+const WorkWith = () => (
+  <section className="work-with" id="work-with">
+    <div className="work-with__container">
+      <div className="work-with__inner">
+        <div className="work-with__part">
+          <h2 className="work-with__title">Building better solutions to improve product</h2>
+          <div className="work-with__subtitle">we work with</div>
+        </div>
+
+        <div className="work-with__box">
+          {WORKS_WITH.map(item => (
+            <div className="work-with__item" key={item.title}>
+              <div className="work-with__caption">{ item.title }</div>
+              <div className="work-with__text">{ item.text }</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const Team = () => (
+  <section className="team">
+    <div className="team__container">
+      <h2 className="team__title">Our Team</h2>
+
+      <div className="team__inner" id="team">
+        {DEVELOPERS.map(dev => (
+          <PersonCard {...dev} key={dev.name} />
+        ))}
+      </div>
+
+      <div className="team__description">
+        We Are the Future is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget facilisis eros. Praesent imperdiet facilisis tellus, eu rutrum nunc consectetur et. Nam at bibendum dui. Pellentesque tincidunt vel ipsum vitae ultrices. Maecenas ut enim fermentum, faucibus mi a, facilisis lorem. Nullam mauris dui, laoreet vel mollis non, viverra id dui. Quisque posuere ligula iaculis velit hendrerit eleifend. Cras et elit semper magna rhoncus tincidunt ut ac massa. In quis maximus ligula, quis maximus arcu. Etiam sollicitudin dapibus cursus. In hac habitasse platea dictumst. Integer ac suscipit tortor, a volutpat elit.
+      </div>
+    </div>
+  </section>
+);
+
+const Contact = () => (
+  <div className="contact-us" id="contact-us">
+    <div className="contact-us__container">
+      <ContactForm />
+    </div>
+  </div>
+);
+
+const App = () => {
+  const moveToAbout = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <>
+      <Header onClickScroller={moveToAbout} />
+      <AboutUs />
+      <Technologies />
+      <Portfolio />
+      <WorkWith />
+      <Team />
+      <Contact />
+      <Footer />
+    </>
+  );
+};
+
+export default App;

@@ -1,0 +1,119 @@
+@import "../../vars";
+
+.contact-form {
+  background: #F1F2F2;
+  padding-top: 60px;
+  padding-left: 60px;
+  display: flex;
+
+  &__title {
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 38px;
+    text-align: center;
+    color: #242424;
+  }
+
+  &__subtitle {
+    font-weight: 200;
+    font-size: 26px;
+    line-height: 38px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 35px;
+  }
+
+  &__part {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__submit {
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 38px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    border: 0;
+    background: #3EB17A;
+    padding: 16px;
+    transition: box-shadow .3s ease;
+
+    &:hover {
+      box-shadow: 0 0 20px rgba(62, 177, 122, 1);
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  input {
+    border: 0;
+    border-bottom: 1px solid #fff;
+    background: none;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 38px;
+    color: #242424;
+    padding-bottom: 5px;
+    width: 430px;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &::-webkit-input-placeholder {color:#242424; font-size: 20px;}
+    &::-moz-placeholder          {color:#242424; font-size: 20px;}/* Firefox 19+ */
+    &:-moz-placeholder           {color:#242424; font-size: 20px;}/* Firefox 18- */
+    &:-ms-input-placeholder      {color:#242424; font-size: 20px;}
+  }
+
+  input + input {
+    margin-top: 35px;
+    margin-bottom: 70px;
+  }
+
+  label {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 38px;
+    color: #242424;
+    margin-bottom: 0;
+    border-left: 1px solid #fff;
+    padding-left: 30px;
+  }
+
+  textarea {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #242424;
+    border: 0;
+    background: none;
+    padding-right: 15px;
+    flex: 1;
+    border-left: 1px solid #fff;
+    padding-left: 30px;
+
+    &:focus {
+      outline: 0;
+    }
+
+    &::-webkit-input-placeholder {color:#242424; font-size: 20px;}
+    &::-moz-placeholder          {color:#242424; font-size: 20px;}/* Firefox 19+ */
+    &:-moz-placeholder           {color:#242424; font-size: 20px;}/* Firefox 18- */
+    &:-ms-input-placeholder      {color:#242424; font-size: 20px;}
+  }
+}
+
+.invalid {
+  color: red !important;
+  border-color: red !important;
+}
+
+.label-error {
+  border-color: red !important;
+}

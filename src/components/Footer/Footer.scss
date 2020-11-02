@@ -1,0 +1,26 @@
+@import "../../vars";
+
+.footer {
+  background: #3EB17A;
+  color: #fff;
+  padding: 12px 0;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 38px;
+  margin-top: 60px;
+
+  &__container {
+    @include container;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__mail {
+    margin-right: auto;
+    margin-left: 50px;
+  }
+}
