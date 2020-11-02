@@ -57,7 +57,7 @@ const DEVELOPERS = [
   {
     img: '/assets/imgs/devs/alexandr_m.png',
     name: 'Aleksandr Movchan',
-    profession: 'Strong Junior Full-stack Developer'
+    profession: 'Junior Full-stack Developer'
   },
   {
     img: '/assets/imgs/devs/nikolay_s.jpg',

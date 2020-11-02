@@ -95,7 +95,7 @@ const Technologies = () => (
 );
 
 const Portfolio = () => (
-  <div className="portfolio">
+  <section className="portfolio">
     <div className="portfolio__container">
       <h2 className="portfolio__title">Portfolio</h2>
 
@@ -125,11 +125,11 @@ const Portfolio = () => (
         </Swiper>
       </div>
     </div>
-  </div>
+  </section>
 );
 
 const WorkWith = () => (
-  <div className="work-with">
+  <section className="work-with">
     <div className="work-with__container">
       <div className="work-with__inner">
         <div className="work-with__part">
@@ -147,10 +147,34 @@ const WorkWith = () => (
         </div>
       </div>
     </div>
-  </div>
+  </section>
 );
 
+const Team = () => (
+  <section className="team">
+    <div className="team__container">
+      <h2 className="team__title">Our Team</h2>
 
+      <div className="team__inner">
+        {DEVELOPERS.map(dev => (
+          <PersonCard {...dev} key={dev.name} />
+        ))}
+      </div>
+
+      <div className="team__description">
+        We Are the Future is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget facilisis eros. Praesent imperdiet facilisis tellus, eu rutrum nunc consectetur et. Nam at bibendum dui. Pellentesque tincidunt vel ipsum vitae ultrices. Maecenas ut enim fermentum, faucibus mi a, facilisis lorem. Nullam mauris dui, laoreet vel mollis non, viverra id dui. Quisque posuere ligula iaculis velit hendrerit eleifend. Cras et elit semper magna rhoncus tincidunt ut ac massa. In quis maximus ligula, quis maximus arcu. Etiam sollicitudin dapibus cursus. In hac habitasse platea dictumst. Integer ac suscipit tortor, a volutpat elit.
+      </div>
+    </div>
+  </section>
+);
+
+const Contact = () => (
+  <div className="contact-us">
+    <div className="contact-us__container">
+      <ContactForm />
+    </div>
+  </div>
+);
 
 
 
@@ -261,16 +285,16 @@ const Developers = () => (
 //   </div>
 // );
 
-const Contact = () => (
-  <div className="contact-us">
-    <div className="contact-us__inner">
-      <h2 className="contact-us__title">Feel free to contact Us!</h2>
-      <h2 className="contact-us__subtitle">We’ll be glad to assist you with the implementation of your dreams!</h2>
+// const Contact = () => (
+//   <div className="contact-us">
+//     <div className="contact-us__inner">
+//       <h2 className="contact-us__title">Feel free to contact Us!</h2>
+//       <h2 className="contact-us__subtitle">We’ll be glad to assist you with the implementation of your dreams!</h2>
 
-      <ContactForm />
-    </div>
-  </div>
-);
+//       <ContactForm />
+//     </div>
+//   </div>
+// );
 
 // const Portfolio = () => (
 //   <div className="portfolio">
@@ -329,6 +353,8 @@ const App = () => {
       <Technologies />
       <Portfolio />
       <WorkWith />
+      <Team />
+      <Contact />
       <AgencyBanner onClickScroller={moveToAbout} />
       <div className="main-page-bg-1">
         <img src="/assets/imgs/Group.png" alt="circles"/>
@@ -341,7 +367,7 @@ const App = () => {
         //<WorkWith />
       </div>
       // <Portfolio />
-      <Contact />
+      // <Contact />
       <Footer />
     </>
   );
