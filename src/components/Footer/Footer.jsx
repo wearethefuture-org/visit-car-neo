@@ -1,19 +1,16 @@
 import React from 'react';
 import { ReactSVG } from 'react-svg';
 import './Footer.scss';
-import { Container } from 'react-bootstrap';
 
 const Footer = () => (
   <footer className="footer">
-    <Container className="footer__inner">
-      <h1 className="footer__text">© 2020, We Are The future. All rights reserved</h1>
-      <h1 className="footer__text">weathefuture@gmail.com</h1>
-
-      <div className="footer__logo">
+    <div className="footer__container">
+      <div className="footer__inner">
         <ReactSVG src='/assets/svgs/logos/footer-logo.svg' />
-        <h1>We Are the Future</h1>
+        <div className="footer__mail">weathefuture@gmail.com</div>
+        <div className="footer__text">© {(new Date().getFullYear())}, We Are The future. All rights reserved</div>
       </div>
-    </Container>
+    </div>
   </footer>
 );
 

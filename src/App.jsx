@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactSVG } from 'react-svg';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import { Link, animateScroll as scroll } from "react-scroll";
 import './App.scss';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
@@ -23,7 +21,7 @@ import PORTFOLIO from './constants/portfolio';
 SwiperCore.use([Navigation]);
 
 const Header = ({ onClickScroller }) => (
-  <header className="header">
+  <header className="header" id="header">
     <TopMenu />
 
     <div className="header__container">
@@ -35,22 +33,98 @@ const Header = ({ onClickScroller }) => (
   </header>
 );
 
-const TopMenu = () => (
-  <nav className="navigation">
-    <div className="navigation__container">
-      <a href="/" className="navigation__logo"><img src="/assets/imgs/navigation__logo.png" alt="Logo" /></a>
-      <a href="/" className="navigation__item navigation__item--is-active">About Us</a>
-      <a href="/" className="navigation__item">Technologies</a>
-      <a href="/" className="navigation__item">Our Team</a>
-      <a href="/" className="navigation__item">Our Clients</a>
-      <a href="/" className="navigation__item">Portfolio</a>
-      <a href="/" className="navigation__item">Contact Us</a>
-    </div>
-  </nav>
-);
+const TopMenu = () => {
+  const [navbar, setNavbar] = useState(false);
+  const changeBackground = () => {
+    if(window.scrollY >= 112) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  }
+
+  window.addEventListener('scroll', changeBackground);
+
+  return (
+    <nav className={navbar ? 'navigation navigation--is-active' : 'navigation'}>
+      <div className="navigation__container">
+        <Link
+          className="navigation__logo"
+          to="header"
+          spy={true}
+          smooth={true}
+          offset={-112}
+          duration={500}
+        >
+          <img src={navbar ? '/assets/svgs/logos/footer-logo.svg' : '/assets/imgs/navigation__logo.png'} alt="Logo" />
+        </Link>
+
+        <Link
+          className="navigation__item"
+          activeClass="navigation__item--is-active"
+          to="about-us"
+          spy={true}
+          smooth={true}
+          offset={-112}
+          duration={500}
+        >About Us</Link>
+
+        <Link
+          className="navigation__item"
+          activeClass="navigation__item--is-active"
+          to="technologies"
+          spy={true}
+          smooth={true}
+          offset={-112}
+          duration={500}
+        >Technologies</Link>
+
+        <Link
+          className="navigation__item"
+          activeClass="navigation__item--is-active"
+          to="portfolio"
+          spy={true}
+          smooth={true}
+          offset={-112}
+          duration={500}
+        >Portfolio</Link>
+
+        <Link
+          className="navigation__item"
+          activeClass="navigation__item--is-active"
+          to="work-with"
+          spy={true}
+          smooth={true}
+          offset={-112}
+          duration={500}
+        >Our Clients</Link>
+
+        <Link
+          className="navigation__item"
+          activeClass="navigation__item--is-active"
+          to="team"
+          spy={true}
+          smooth={true}
+          offset={-250}
+          duration={500}
+        >Our Team</Link>
+
+        <Link
+          className="navigation__item"
+          activeClass="navigation__item--is-active"
+          to="contact-us"
+          spy={true}
+          smooth={true}
+          offset={-390}
+          duration={500}
+        >Contact Us</Link>
+      </div>
+    </nav>
+  );
+};
 
 const AboutUs = () => (
-  <section className="about-us">
+  <section className="about-us" id="about-us">
     <div className="about-us__container">
       <h2 className="about-us__title">About Us</h2>
       <h3 className="about-us__subtitle">Ambitious Ukrainian IT company, starting the path of digital transformation of your ideas</h3>
@@ -78,7 +152,7 @@ const AboutUs = () => (
 );
 
 const Technologies = () => (
-  <section className="technologies">
+  <section className="technologies" id="technologies">
     <div className="technologies__container">
       <h2 className="technologies__title">Technologies</h2>
       <h3 className="technologies__subtitle">We are working with different modern technologies you can be interested in:</h3>
@@ -89,13 +163,13 @@ const Technologies = () => (
         ))}
       </div>
 
-      <button type="button" className="technologies__contact">Contact us for details</button>
+      <button type="button" className="technologies__contact" onClick={() => scroll.scrollToBottom()}>Contact us for details</button>
     </div>
   </section>
 );
 
 const Portfolio = () => (
-  <section className="portfolio">
+  <section className="portfolio" id="portfolio">
     <div className="portfolio__container">
       <h2 className="portfolio__title">Portfolio</h2>
 
@@ -129,7 +203,7 @@ const Portfolio = () => (
 );
 
 const WorkWith = () => (
-  <section className="work-with">
+  <section className="work-with" id="work-with">
     <div className="work-with__container">
       <div className="work-with__inner">
         <div className="work-with__part">
@@ -155,7 +229,7 @@ const Team = () => (
     <div className="team__container">
       <h2 className="team__title">Our Team</h2>
 
-      <div className="team__inner">
+      <div className="team__inner" id="team">
         {DEVELOPERS.map(dev => (
           <PersonCard {...dev} key={dev.name} />
         ))}
@@ -169,174 +243,12 @@ const Team = () => (
 );
 
 const Contact = () => (
-  <div className="contact-us">
+  <div className="contact-us" id="contact-us">
     <div className="contact-us__container">
       <ContactForm />
     </div>
   </div>
 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const AgencyBanner = ({ onClickScroller }) => (
-  <div className="agency-banner">
-    <h1 className="agency-banner__title">We Are the Future</h1>
-    <ReactSVG src='/assets/svgs/logos/banner-logo.svg' className="agency-banner__logo" />
-    <ReactSVG onClick={onClickScroller} src='/assets/svgs/scroll-down.svg' className="agency-banner__scroller" />
-  </div>
-);
-
-const About = () => (
-  <div className="about">
-    <div className="main-page-bg-2">
-      <Container fluid>
-        <h2 className="about__title">Who we are?</h2>
-
-        <div className="about__sub-title">
-          <p>Ambitious Ukrainian IT company,</p>
-          <p>starting the  path of digital transformation</p>
-          <p>of your ideas</p>
-        </div>
-      </Container>
-    </div>
-
-    <Container fluid>
-      <div className="we-can-better">
-        <Row>
-          <Col xs={12} sm={3} 
-          className="we-can-better__info">We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs.</Col>
-          <Col xs={12} sm={6} className="we-can-better__img">
-            <img src="/assets/imgs/we-can-better.jpg" alt="We can better"/>
-            <h2 className="we-can-better__title">We can better</h2>
-          </Col>
-          <Col xs={12} sm={3} className="we-can-better__info">10+ of true professionals with solid technical background in different domains - SaaS applications, complex web projects, DevOps solutions.</Col>
-        </Row>
-      </div>
-    </Container>
-  </div>
-);
-
-// const Technologies = () => (
-//   <div className="technologies">
-//     <h2 className="technologies__title">Technologies</h2>
-//     <Container fluid>
-//       <div className="technologies__sub-title">
-//         <p>We are working with different modern technologies you can</p>
-//         <p>be interested in:</p>
-//       </div>
-
-//       <Row>
-//         {TECHNOLOGIES.map(tech => (
-//           <Col xs={12} md={3} key={tech.title}>
-//             <InfoCard {...tech} />
-//           </Col>
-//         ))}
-//       </Row>
-//     </Container>
-//   </div>
-// );
-
-const Developers = () => (
-  <div className="developers">
-    <Container fluid>
-      <h2 className="developers__title">*** Drill-down of our technical skills can be provided in a separate discussion.</h2>
-
-      <div className="developers__bg">Team</div>
-      <Row>
-        {DEVELOPERS.map(dev => (
-          <Col xs={12} sm={6} lg={3} key={dev.name}>
-            <PersonCard {...dev} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
-  </div>
-);
-
-// const WorkWith = () => (
-//   <div className="work-with">
-//     <Container fluid>
-//       <h2 className="work-with__title">Who we work with</h2>
-//       <GridList items={WORKS_WITH} />
-//     </Container>
-//   </div>
-// );
-
-// const Contact = () => (
-//   <div className="contact-us">
-//     <div className="contact-us__inner">
-//       <h2 className="contact-us__title">Feel free to contact Us!</h2>
-//       <h2 className="contact-us__subtitle">We’ll be glad to assist you with the implementation of your dreams!</h2>
-
-//       <ContactForm />
-//     </div>
-//   </div>
-// );
-
-// const Portfolio = () => (
-//   <div className="portfolio">
-//     <Container fluid>
-//       <h2 className="portfolio__title">Portfolio</h2>
-//       <Row style={{ justifyContent: 'center' }}>
-//         <Col xs={12} sm={{ span: 4 }} className="portfolio-item">
-//           <img
-//             src="/assets/imgs/portfolio/carswork.png"
-//             alt="carswork"
-//             className="portfolio-item__img"
-//           />
-//           <h2 className="portfolio-item__title">Carswork</h2>
-//           <Popup 
-//             popupTitle="Cars work"
-//             popupSiteLink="https://carswork.com"
-//             popupSiteLogo="/assets/imgs/laptop2.png"
-//             popupMissionTextFirst="We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs."
-//             popupMissionTextSecond="We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs."
-//             popupTechnologiesDB="PostgreSQL / MongoDB / MySQL / DynamoDb / Elasticsearch / Redis"
-//             popupTechnologiesGeneral="OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)"
-//             popupTechnologiesFE="Angular (Typescript) & React & Net.JS Frameworks / HTML / CSS (SCSS, LESS, bootstrap, angular material), Javascript (ES6 - ES9)"
-//             popupTechnologiesBE="Node.js (Koa, express, meteor, hapi, sails, nestjs)"
-//           />
-//         </Col>
-//         <Col xs={12} sm={{ span: 4, offset: 2 }} className="portfolio-item">
-//           <img
-//             src="https://stage.connectoro.io/assets/images/logos/fuse.svg"
-//             alt="connectoro"
-//             className="portfolio-item__img"
-//           />
-//           <h2 className="portfolio-item__title">Connectoro</h2>
-//           <a href="https://app.connectoro.io" rel="noopener noreferrer" target="_blank">
-//             <button className="btn portfolio-item__btn">
-//               Open
-//             </button>
-//           </a>
-//         </Col>
-//       </Row>
-//     </Container>
-//   </div>
-// );
 
 const App = () => {
   const moveToAbout = () => {
@@ -348,26 +260,13 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      <Header onClickScroller={moveToAbout} />
       <AboutUs />
       <Technologies />
       <Portfolio />
       <WorkWith />
       <Team />
       <Contact />
-      <AgencyBanner onClickScroller={moveToAbout} />
-      <div className="main-page-bg-1">
-        <img src="/assets/imgs/Group.png" alt="circles"/>
-        <About />
-        // <Technologies />
-      </div>
-      <div className="main-page-bg-3">
-        <img src="/assets/imgs/Group.png" alt=""/>
-        <Developers />
-        //<WorkWith />
-      </div>
-      // <Portfolio />
-      // <Contact />
       <Footer />
     </>
   );

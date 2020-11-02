@@ -1,6 +1,4 @@
 import React from 'react';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { Formik } from 'formik';
 import Axios from 'axios';
 import * as Yup from 'yup';
