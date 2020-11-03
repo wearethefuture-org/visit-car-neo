@@ -253,7 +253,7 @@ const Contact = () => (
 const App = () => {
   const moveToAbout = () => {
     window.scrollTo({
-      top: window.innerHeight,
+      top: window.innerHeight - 112,
       behavior: 'smooth'
     });
   };
