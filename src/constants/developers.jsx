@@ -25,11 +25,6 @@ const DEVELOPERS = [
     profession: 'Senior Back-End Developer'
   },
   {
-    img: '/assets/imgs/devs/pavel.png',
-    name: 'Pavel Makukha',
-    profession: 'Middle Web Full-Stack Developer'
-  },
-  {
     img: '/assets/imgs/devs/sergei.png',
     name: 'Sergey Shchur',
     profession: 'Project Manager'
