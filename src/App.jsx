@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { ReactSVG } from 'react-svg';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -35,6 +35,8 @@ const Header = ({ onClickScroller }) => (
 
 const TopMenu = () => {
   const [navbar, setNavbar] = useState(false);
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
   const changeBackground = () => {
     if(window.scrollY >= 112) {
       setNavbar(true);
@@ -42,6 +44,23 @@ const TopMenu = () => {
       setNavbar(false);
     }
   }
+
+  const toggleMenu = () => {
+    setOpen(!open);
+  }
+
+  const handleClickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setOpen(false);
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
+  }, []);
 
   window.addEventListener('scroll', changeBackground);
 
@@ -59,65 +78,75 @@ const TopMenu = () => {
           <img src={navbar ? '/assets/svgs/logos/footer-logo.svg' : '/assets/imgs/navigation__logo.png'} alt="Logo" />
         </Link>
 
-        <Link
-          className="navigation__item"
-          activeClass="navigation__item--is-active"
-          to="about-us"
-          spy={true}
-          smooth={true}
-          offset={-112}
-          duration={500}
-        >About Us</Link>
+        {open && <div onClick={toggleMenu} className="navigation__burger navigation__burger--is-open"></div>}
+        {!open && <div onClick={toggleMenu} className="navigation__burger"></div>}
+        <div className="navigation__inner" ref={ref}>
+          <Link
+            onClick={toggleMenu}
+            className="navigation__item"
+            activeClass="navigation__item--is-active"
+            to="about-us"
+            spy={true}
+            smooth={true}
+            offset={-112}
+            duration={500}
+          >About Us</Link>
 
-        <Link
-          className="navigation__item"
-          activeClass="navigation__item--is-active"
-          to="technologies"
-          spy={true}
-          smooth={true}
-          offset={-112}
-          duration={500}
-        >Technologies</Link>
+          <Link
+            onClick={toggleMenu}
+            className="navigation__item"
+            activeClass="navigation__item--is-active"
+            to="technologies"
+            spy={true}
+            smooth={true}
+            offset={-112}
+            duration={500}
+          >Technologies</Link>
 
-        <Link
-          className="navigation__item"
-          activeClass="navigation__item--is-active"
-          to="portfolio"
-          spy={true}
-          smooth={true}
-          offset={-112}
-          duration={500}
-        >Portfolio</Link>
+          <Link
+            onClick={toggleMenu}
+            className="navigation__item"
+            activeClass="navigation__item--is-active"
+            to="portfolio"
+            spy={true}
+            smooth={true}
+            offset={-112}
+            duration={500}
+          >Portfolio</Link>
 
-        <Link
-          className="navigation__item"
-          activeClass="navigation__item--is-active"
-          to="work-with"
-          spy={true}
-          smooth={true}
-          offset={-112}
-          duration={500}
-        >Our Clients</Link>
+          <Link
+            onClick={toggleMenu}
+            className="navigation__item"
+            activeClass="navigation__item--is-active"
+            to="work-with"
+            spy={true}
+            smooth={true}
+            offset={-112}
+            duration={500}
+          >Our Clients</Link>
 
-        <Link
-          className="navigation__item"
-          activeClass="navigation__item--is-active"
-          to="team"
-          spy={true}
-          smooth={true}
-          offset={-250}
-          duration={500}
-        >Our Team</Link>
+          <Link
+            onClick={toggleMenu}
+            className="navigation__item"
+            activeClass="navigation__item--is-active"
+            to="team"
+            spy={true}
+            smooth={true}
+            offset={-250}
+            duration={500}
+          >Our Team</Link>
 
-        <Link
-          className="navigation__item"
-          activeClass="navigation__item--is-active"
-          to="contact-us"
-          spy={true}
-          smooth={true}
-          offset={-390}
-          duration={500}
-        >Contact Us</Link>
+          <Link
+            onClick={toggleMenu}
+            className="navigation__item"
+            activeClass="navigation__item--is-active"
+            to="contact-us"
+            spy={true}
+            smooth={true}
+            offset={-390}
+            duration={500}
+          >Contact Us</Link>
+        </div>
       </div>
     </nav>
   );
