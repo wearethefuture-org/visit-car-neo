@@ -27,6 +27,11 @@ $xl: 1200px;
 		display: block;
 		margin: 20px auto 0;
 	}
+
+	@media(max-width: $sm) {
+		font-size: 30px;
+		line-height: 35px;
+	}
 }
 
 @mixin section-subtitle {
@@ -36,6 +41,11 @@ $xl: 1200px;
 	text-align: center;
 	margin: 20px auto 0;
 	max-width: 435px;
+
+	@media(max-width: $sm) {
+		font-size: 20px;
+		line-height: 25px;
+	}
 }
 
 @mixin section-title-technology {

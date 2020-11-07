@@ -9,6 +9,15 @@
   line-height: 38px;
   margin-top: 60px;
 
+  @media(max-width: $lg) {
+    font-size: 18px;
+  }
+
+  @media(max-width: $md) {
+    line-height: 25px;
+    text-align: center;
+  }
+
   &__container {
     @include container;
   }
@@ -17,10 +26,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media(max-width: $md) {
+      flex-direction: column;
+    }
   }
 
   &__mail {
     margin-right: auto;
     margin-left: 50px;
+
+    @media(max-width: $lg) {
+      margin-left: 25px;
+    }
+
+    @media(max-width: $md) {
+      margin: 10px 0 0;
+    }
   }
 }

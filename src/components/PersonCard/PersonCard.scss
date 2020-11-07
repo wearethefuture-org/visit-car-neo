@@ -1,3 +1,5 @@
+@import "../../vars";
+
 .person-card {
   display: flex;
   align-items: center;
@@ -5,6 +7,10 @@
   margin-bottom: 40px;
   margin-right: 20px;
   width: 260px;
+
+  @media(max-width: $sm) {
+    margin-bottom: 20px;
+  }
 
   &__photo {
     width: 100%;
@@ -19,6 +25,12 @@
     font-size: 26px;
     line-height: 38px;
     color: #242424;
+
+    @media(max-width: $sm) {
+      font-size: 20px;
+      line-height: 25px;
+      margin-top: 10px;
+    }
   }
 
   &__profession {
@@ -30,5 +42,9 @@
     text-align: center;
     margin-top: 10px;
     padding: 0 10px;
+
+    @media(max-width: $sm) {
+      margin-top: 5px;
+    }
   }
 }
