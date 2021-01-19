@@ -160,7 +160,7 @@ const AboutUs = () => (
 
       <div className="about-us__inner">
         <div className="about-us__description">
-          <p className="about-us__paragraph">We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs.</p>
+          <p className="about-us__paragraph">We’ll help your business to grow from the IT perspective including all its aspects starting from modern technologies and ending with the modern Agile practices for management needs.</p>
           <div className="about-us__info">
             <div className="about-us__year">10+</div>
             <p className="about-us__paragraph about-us__paragraph--shifted">of true professionals with solid technical background in different domains - <span className="about-us__bold">SaaS applications, complex web projects, DevOps solutions.</span></p>
@@ -184,7 +184,7 @@ const Technologies = () => (
   <section className="technologies" id="technologies">
     <div className="technologies__container">
       <h2 className="technologies__title">Technologies</h2>
-      <h3 className="technologies__subtitle">We are working with different modern technologies you can be interested in:</h3>
+      <h3 className="technologies__subtitle">We are working in different domains using modern technologies you can be interested in:</h3>
 
       <div className="technologies__infocard">
         {TECHNOLOGIES.map(tech => (
@@ -192,7 +192,7 @@ const Technologies = () => (
         ))}
       </div>
 
-      <button type="button" className="technologies__contact" onClick={() => scroll.scrollToBottom()}>Contact us for details</button>
+      <button type="button" className="technologies__contact" onClick={() => scroll.scrollToBottom()}>Contact Us</button>
     </div>
   </section>
 );
@@ -236,7 +236,7 @@ const WorkWith = () => (
     <div className="work-with__container">
       <div className="work-with__inner">
         <div className="work-with__part">
-          <h2 className="work-with__title">Building better solutions to improve product</h2>
+          <h2 className="work-with__title">Building the best IT solutions for your product</h2>
           <div className="work-with__subtitle">we work with</div>
         </div>
 
@@ -265,7 +265,7 @@ const Team = () => (
       </div>
 
       <div className="team__description">
-        We Are the Future is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget facilisis eros. Praesent imperdiet facilisis tellus, eu rutrum nunc consectetur et. Nam at bibendum dui. Pellentesque tincidunt vel ipsum vitae ultrices. Maecenas ut enim fermentum, faucibus mi a, facilisis lorem. Nullam mauris dui, laoreet vel mollis non, viverra id dui. Quisque posuere ligula iaculis velit hendrerit eleifend. Cras et elit semper magna rhoncus tincidunt ut ac massa. In quis maximus ligula, quis maximus arcu. Etiam sollicitudin dapibus cursus. In hac habitasse platea dictumst. Integer ac suscipit tortor, a volutpat elit.
+        Customer satisfaction is the main goal for us as a company which we achieve through the regular successful delivery we can provide as a team of mature experts in relevant areas for you.
       </div>
     </div>
   </section>

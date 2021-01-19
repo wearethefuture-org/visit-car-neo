@@ -83,7 +83,7 @@ const PortfolioItem = ({
             </div>
 
             <div className="popup__contact">
-              <div className="popup__subtitle popup__subtitle--contact">Do you want to know more?</div>
+              <div className="popup__subtitle popup__subtitle--contact">Interested?</div>
               <a href="mailto:weathefuture@gmail.com" className="popup__email">Contact us</a>
             </div>
           </ModalBody>
