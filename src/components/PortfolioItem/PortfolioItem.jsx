@@ -52,7 +52,7 @@ const PortfolioItem = ({
             <a href={ popupSiteLink } target="_blank" rel="noopener noreferrer" className="popup__link">Visit site</a>
 
             <div className="popup__mission">
-              <div className="popup__subtitle">Mission:</div>
+              <div className="popup__subtitle">About:</div>
               <p className="popup__paragraph" dangerouslySetInnerHTML={{__html: popupMissionText}}></p>
             </div>
 

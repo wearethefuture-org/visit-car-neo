@@ -22,9 +22,9 @@ const PORTFOLIO = [
   	popupBE: 'Node.js (Hapi)'
   },
   {
-    src: '/assets/imgs/portfolio/rsf.PNG',
+    src: '/assets/imgs/portfolio/rfs.png',
     title: 'Run for Stuff',
-    popupImageSrc: '/assets/imgs/portfolio/rsf_home.PNG',
+    popupImageSrc: '/assets/imgs/portfolio/rfs_home.PNG',
     popupSiteLink: 'https://runforstuff.com',
     popupMissionText: 'A hybrid of Groupon and Pokémon Go. The user downloads the application and finds gifts in certain places (discounts from different establishments or stores). <br/> Our team develops a backend and an administrative panel for the application, namely, company registration, payment of discount coupons, mathematical calculations of winning.',
   	popupDbs: 'MongoDB',
@@ -55,7 +55,7 @@ const PORTFOLIO = [
   },
   {
     src: '/assets/imgs/portfolio/social.png',
-    title: 'Social',
+    title: 'Social Network',
     popupImageSrc: '/assets/imgs/portfolio/social_home.png',
     popupMissionText: 'A new social network for communicating with friends, sharing photos, news, comments. Ability to create chats and groups.',
   	popupDbs: 'PostgreSQL',
