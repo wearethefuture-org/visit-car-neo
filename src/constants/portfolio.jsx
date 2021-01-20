@@ -22,7 +22,7 @@ const PORTFOLIO = [
   	popupBE: 'Node.js (Hapi)'
   },
   {
-    src: '/assets/imgs/portfolio/rfs.png',
+    src: '/assets/imgs/portfolio/rfs.PNG',
     title: 'Run for Stuff',
     popupImageSrc: '/assets/imgs/portfolio/rfs_home.PNG',
     popupSiteLink: 'https://runforstuff.com',
@@ -43,7 +43,7 @@ const PORTFOLIO = [
   	popupBE: 'Node.js (Nest TS)'
   },
   {
-    src: '/assets/imgs/portfolio/createensemble.png',
+    src: '/assets/imgs/portfolio/createensemble.PNG',
     title: 'Create Ensemble',
     popupImageSrc: '/assets/imgs/portfolio/createensemble_home.png',
     popupSiteLink: 'https://www.createensemble.com/',
@@ -66,7 +66,7 @@ const PORTFOLIO = [
   {
     src: '/assets/imgs/portfolio/shop.PNG',
     title: 'Shop',
-    popupImageSrc: '/assets/imgs/portfolio/shop_home.png',
+    popupImageSrc: '/assets/imgs/portfolio/shop_home.PNG',
     popupMissionText: 'We’ll help you grow and enhance your business using best practices staring from usage of modern technologies and ending with best Agile practices for organizational needs.',
   	popupDbs: 'PostgreSQL',
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
