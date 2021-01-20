@@ -11,15 +11,15 @@ const PORTFOLIO = [
   	popupBE: 'Node.js (Express)'
   },
   {
-    src: '/assets/imgs/portfolio/connectoro.jpg',
-    title: 'Connectoro',
-    popupImageSrc: '/assets/imgs/portfolio/connectoro_home.PNG',
-    popupSiteLink: 'https://app.connectoro.io/login',
-    popupMissionText: '(Ireland) development of a backend (admin panel and the backend itself) for a dropshipping company.',
-  	popupDbs: 'MongoDB',
+    src: '/assets/imgs/portfolio/createensemble.PNG',
+    title: 'Create Ensemble',
+    popupImageSrc: '/assets/imgs/portfolio/createensemble_home.png',
+    popupSiteLink: 'https://www.createensemble.com/',
+    popupMissionText: '(USA) is a social network for creative people. Something like Upwork. <br/> It is possible to register as a user and publish your biography and, as a company, by posting your information, to hire employees for work. <br/> Internal correspondence between me and users, the ability to create groups, add to friends. <br/> The mentoring functionality is also separately implemented, where any registered user can be a mentor or student.',
+  	popupDbs: 'PostgreSQL',
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
-  	popupFE: 'React (Redux Thunk)',
-  	popupBE: 'Node.js (Hapi)'
+  	popupFE: 'Vue',
+  	popupBE: 'Java'
   },
   {
     src: '/assets/imgs/portfolio/rfs.PNG',
@@ -43,17 +43,6 @@ const PORTFOLIO = [
   	popupBE: 'Node.js (Nest TS)'
   },
   {
-    src: '/assets/imgs/portfolio/createensemble.PNG',
-    title: 'Create Ensemble',
-    popupImageSrc: '/assets/imgs/portfolio/createensemble_home.png',
-    popupSiteLink: 'https://www.createensemble.com/',
-    popupMissionText: '(USA) is a social network for creative people. Something like Upwork. <br/> It is possible to register as a user and publish your biography and, as a company, by posting your information, to hire employees for work. <br/> Internal correspondence between me and users, the ability to create groups, add to friends. <br/> The mentoring functionality is also separately implemented, where any registered user can be a mentor or student.',
-  	popupDbs: 'PostgreSQL',
-  	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
-  	popupFE: 'Vue',
-  	popupBE: 'Java'
-  },
-  {
     src: '/assets/imgs/portfolio/social.png',
     title: 'Social Network',
     popupImageSrc: '/assets/imgs/portfolio/social_home.png',
@@ -72,6 +61,17 @@ const PORTFOLIO = [
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
   	popupFE: 'NextJS (TS)',
   	popupBE: 'Node.js (Nest TS)'
+  },
+  {
+    src: '/assets/imgs/portfolio/connectoro.jpg',
+    title: 'Connectoro',
+    popupImageSrc: '/assets/imgs/portfolio/connectoro_home.PNG',
+    popupSiteLink: 'https://app.connectoro.io/login',
+    popupMissionText: '(Ireland) development of a backend (admin panel and the backend itself) for a dropshipping company.',
+  	popupDbs: 'MongoDB',
+  	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
+  	popupFE: 'React (Redux Thunk)',
+  	popupBE: 'Node.js (Hapi)'
   },
 ];
 
