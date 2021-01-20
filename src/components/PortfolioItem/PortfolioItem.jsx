@@ -52,7 +52,7 @@ const PortfolioItem = ({
             <a href={ popupSiteLink } target="_blank" rel="noopener noreferrer" className="popup__link">Visit site</a>
 
             <div className="popup__mission">
-              <div className="popup__subtitle">Mission:</div>
+              <div className="popup__subtitle">About:</div>
               <p className="popup__paragraph" dangerouslySetInnerHTML={{__html: popupMissionText}}></p>
             </div>
 
@@ -83,7 +83,7 @@ const PortfolioItem = ({
             </div>
 
             <div className="popup__contact">
-              <div className="popup__subtitle popup__subtitle--contact">Do you want to know more?</div>
+              <div className="popup__subtitle popup__subtitle--contact">Interested?</div>
               <a href="mailto:weathefuture@gmail.com" className="popup__email">Contact us</a>
             </div>
           </ModalBody>
