@@ -49,7 +49,7 @@ const PortfolioItem = ({
               <img src={ popupImageSrc } alt={ title } className="popup__img" />
             </div>
 
-            <a href={ popupSiteLink } target="_blank" rel="noopener noreferrer" className="popup__link">Visit site</a>
+            {popupSiteLink && <a href={ popupSiteLink } target="_blank" rel="noopener noreferrer" className="popup__link">Visit site</a>}  
 
             <div className="popup__mission">
               <div className="popup__subtitle">About:</div>

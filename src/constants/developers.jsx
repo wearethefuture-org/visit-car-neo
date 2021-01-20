@@ -50,23 +50,23 @@ const DEVELOPERS = [
     profession: 'Middle Front-End Developer'
   },
   {
-    img: '/assets/imgs/devs/oles_h.jpg',
-    name: 'Oles Hrytseniuk',
-    profession: 'Middle Full-Stack Developer'
+    img: '/assets/imgs/devs/evgenia_s.JPG',
+    name: 'Evgenia Svirko',
+    profession: 'Middle Front-End Developer'
   },
   {
     img: '/assets/imgs/devs/pavlo_y.png',
     name: 'Pavlo Yakhontov',
-    profession: 'Middle Full-Stack Developer'
-  },
-  {
-    img: '/assets/imgs/devs/evgenia_s.JPG',
-    name: 'Evgenia Svirko',
-    profession: 'Middle Full-Stack Developer'
+    profession: 'Middle React Native Developer'
   },
   {
     img: '/assets/imgs/devs/mykhaylo_z.jpeg',
     name: 'Mykhaylo Zeykan',
+    profession: 'Middle Back-End Developer'
+  },
+  {
+    img: '/assets/imgs/devs/oles_h.jpg',
+    name: 'Oles Hrytseniuk',
     profession: 'Middle Full-Stack Developer'
   },
   {
