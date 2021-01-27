@@ -4,33 +4,36 @@ import { Modal, ModalBody } from 'reactstrap';
 import './PortfolioItem.scss';
 
 const PortfolioItem = ({
-    src,
-    title,
-    popupImageSrc,
-    popupSiteLink,
-    popupMissionText,
-    popupDbs,
-    popupDevKnowledge,
-    popupFE,
-    popupBE
-  }) => {
+  src,
+  title,
+  popupImageSrc,
+  popupSiteLink,
+  popupMissionText,
+  popupDbs,
+  popupDevKnowledge,
+  popupFE,
+  popupBE,
+  popupAPP,
+}) => {
     const [modal, setModal] = React.useState(false);
     const toggle = () => setModal(!modal);
-  
+
     return (
       <>
-        <div className="portfolio-item__img">
-          <img
-            src={ src }
-            alt={ title }
-          />
-        </div>
-        
-        <h2 className="portfolio-item__title">{ title }</h2>
+        <div className="portfolio-item__container" onClick={ toggle }>
+          <div className="portfolio-item__img">
+            <img
+              src={ src }
+              alt={ title }
+            />
+          </div>
+          
+          <h2 className="portfolio-item__title">{ title }</h2>
 
-        <button type="button" className="portfolio-item__details" onClick={ toggle }>
-          Details
-        </button>
+          <button type="button" className="portfolio-item__details">
+            Details
+          </button>
+        </div>
 
         <Modal isOpen={ modal } centered={ true } toggle={ toggle } contentClassName="popup__inner" className="popup">
           <ReactSVG src='/assets/svgs/close-icon.svg' className="popup__close" onClick={ toggle } />
@@ -79,6 +82,13 @@ const PortfolioItem = ({
                   <div className="popup__part-title">Back-End:</div>
                   <div className="popup__part-description">{ popupBE }</div>
                 </div>
+                
+                {popupAPP && (
+                  <div className="popup__part">
+                    <div className="popup__part-title">APP(iOS, Android):</div>
+                    <div className="popup__part-description">{ popupAPP }</div>
+                  </div>
+                )}
               </div>
             </div>
 

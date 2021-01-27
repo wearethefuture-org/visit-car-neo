@@ -8,7 +8,7 @@ const Footer = () => (
       <div className="footer__inner">
         <ReactSVG src='/assets/svgs/logos/footer-logo.svg' />
         <div className="footer__mail">weathefuture@gmail.com</div>
-        <div className="footer__text">© {(new Date().getFullYear())}, We Are The future. All rights reserved</div>
+        <div className="footer__text">© {(new Date().getFullYear())}, We Are The Future. All rights reserved</div>
       </div>
     </div>
   </footer>

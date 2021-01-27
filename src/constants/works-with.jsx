@@ -16,7 +16,7 @@ const WORKS_WITH = [
   },
   {
     title: 'those',
-    text: 'who need upscale frontend'
+    text: 'who need a high-quality product'
   }
 ];
 

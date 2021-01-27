@@ -8,7 +8,7 @@ const PORTFOLIO = [
   	popupDbs: 'MongoDB',
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
   	popupFE: 'Angular (Typescript)',
-  	popupBE: 'Node.js (Express)'
+    popupBE: 'Node.js (Express)',
   },
   {
     src: '/assets/imgs/portfolio/createensemble.PNG',
@@ -40,12 +40,14 @@ const PORTFOLIO = [
   	popupDbs: 'PostgreSQL',
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
   	popupFE: 'React (Redux Saga)',
-  	popupBE: 'Node.js (Nest TS)'
+    popupBE: 'Node.js (Nest TS)',
+    popupAPP: 'React Native'
   },
   {
     src: '/assets/imgs/portfolio/social.png',
     title: 'Social Network',
-    popupImageSrc: '/assets/imgs/portfolio/social_home.png',
+    popupImageSrc: 
+      '/assets/imgs/portfolio/social_home.png',
     popupMissionText: 'A new social network for communicating with friends, sharing photos, news, comments. Ability to create chats and groups.',
   	popupDbs: 'PostgreSQL',
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
