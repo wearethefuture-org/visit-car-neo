@@ -136,7 +136,31 @@
 
     &__body {
         padding: 0;
+        width: 100%;
         max-width: 900px;
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            &:after {
+                display: none;
+            }
+        }
+
+        .swiper-button-next {
+            right: 0;
+
+            @media(max-width: $sm) {
+                right: -5px;
+            }
+        }
+
+        .swiper-button-prev {
+            left: 0;
+
+            @media(max-width: $sm) {
+                left: -5px;
+            }
+        }
     }
 
     &__browser {
@@ -180,7 +204,11 @@
 
     &__img {
         margin-top: 12px;
-        max-width: 100%;
+        max-width: 90%;
+
+        @media(max-width: $sm) {
+            max-width: 82%;
+        }
     }
 
     &__link {

@@ -1,7 +1,11 @@
 import React from 'react';
 import { ReactSVG } from 'react-svg';
 import { Modal, ModalBody } from 'reactstrap';
+import SwiperCore, { Navigation } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import './PortfolioItem.scss';
+
+SwiperCore.use([Navigation]);
 
 const PortfolioItem = ({
   src,
@@ -49,7 +53,21 @@ const PortfolioItem = ({
                 <div className="popup__bar"></div>
               </div>
               
-              <img src={ popupImageSrc } alt={ title } className="popup__img" />
+              <Swiper
+                navigation={{
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+                }}
+              >
+                {popupImageSrc.map(item => (
+                  <SwiperSlide key={item} style={{textAlign: 'center'}}>
+                    <img src={ item } alt={ title } className="popup__img" />
+                  </SwiperSlide>
+                ))}
+
+                <div className="swiper-button-next"><ReactSVG src='/assets/svgs/next-arrow.svg' /></div>
+                <div className="swiper-button-prev"><ReactSVG src='/assets/svgs/prev-arrow.svg' /></div>
+              </Swiper>
             </div>
 
             {popupSiteLink && <a href={ popupSiteLink } target="_blank" rel="noopener noreferrer" className="popup__link">Visit site</a>}  
