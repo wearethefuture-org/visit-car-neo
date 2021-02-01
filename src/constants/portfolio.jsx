@@ -9,6 +9,7 @@ const PORTFOLIO = [
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
   	popupFE: 'Angular (Typescript)',
     popupBE: 'Node.js (Express)',
+    urlName: 'carswork',
   },
   {
     src: '/assets/imgs/portfolio/createensemble.PNG',
@@ -19,7 +20,8 @@ const PORTFOLIO = [
   	popupDbs: 'PostgreSQL',
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
   	popupFE: 'Vue',
-  	popupBE: 'Java'
+  	popupBE: 'Java',
+    urlName: 'createensemble',
   },
   {
     src: '/assets/imgs/portfolio/rfs.PNG',
@@ -30,7 +32,8 @@ const PORTFOLIO = [
   	popupDbs: 'MongoDB',
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
   	popupFE: 'React (Redux Saga)',
-  	popupBE: 'Node.js (Loopback TS)'
+  	popupBE: 'Node.js (Loopback TS)',
+    urlName: 'rfs',
   },
   {
     src: '/assets/imgs/portfolio/groundworks.PNG',
@@ -41,7 +44,8 @@ const PORTFOLIO = [
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
   	popupFE: 'React (Redux Saga)',
     popupBE: 'Node.js (Nest TS)',
-    popupAPP: 'React Native'
+    popupAPP: 'React Native',
+    urlName: 'groundworks',
   },
   {
     src: '/assets/imgs/portfolio/social.png',
@@ -54,7 +58,8 @@ const PORTFOLIO = [
   	popupDbs: 'PostgreSQL',
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
   	popupFE: 'React (Redux Thunk)',
-  	popupBE: 'Node.js (Nest TS)'
+  	popupBE: 'Node.js (Nest TS)',
+    urlName: 'socialnetwork',
   },
   {
     src: '/assets/imgs/portfolio/shop.PNG',
@@ -64,7 +69,8 @@ const PORTFOLIO = [
   	popupDbs: 'PostgreSQL',
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
   	popupFE: 'NextJS (TS)',
-  	popupBE: 'Node.js (Nest TS)'
+  	popupBE: 'Node.js (Nest TS)',
+    urlName: 'shop',
   },
   {
     src: '/assets/imgs/portfolio/connectoro.jpg',
@@ -75,7 +81,8 @@ const PORTFOLIO = [
   	popupDbs: 'MongoDB',
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
   	popupFE: 'React (Redux Thunk)',
-  	popupBE: 'Node.js (Hapi)'
+  	popupBE: 'Node.js (Hapi)',
+    urlName: 'connectoro',
   },
 ];
 

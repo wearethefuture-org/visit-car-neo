@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -301,4 +302,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default withRouter(App);

@@ -10,6 +10,16 @@
         cursor: pointer;
     }
 
+    &__link {
+        text-decoration: none;
+        color: #000000;
+
+        &:hover {
+            text-decoration: none;
+            color: #000000;
+        }
+    }
+
     &__img {
         height: 360px;
 
