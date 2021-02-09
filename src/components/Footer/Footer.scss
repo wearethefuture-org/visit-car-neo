@@ -32,6 +32,21 @@
     }
   }
 
+  &__social {
+    display: inline-flex;
+    margin-top: 10px;
+    margin-left: 0;
+
+    @media (min-width: $md) {
+      margin-top: 0;
+      margin-left: 20px;
+    }
+
+    &__icon {
+      margin: 0 10px;
+    }
+  }
+
   &__mail {
     margin-right: auto;
     margin-left: 50px;
@@ -42,6 +57,14 @@
 
     @media(max-width: $md) {
       margin: 10px 0 0;
+    }
+  }
+
+  &__text {
+    @media (min-width: $md) {
+      line-height: normal;
+      text-align: center;
+      margin-left: 20px;
     }
   }
 }
