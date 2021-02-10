@@ -1,7 +1,8 @@
 import React from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import App from "./App";
-import PortfolioModal from "./components/PortfolioItem/PortfolioModal/PortfolioModal";
+import NotFound from "./components/NotFound/NotFound";
+import PortfolioModal from "./components/PortfolioModal/PortfolioModal";
 
 const Routers = (props) => {
   const previousLocation = {
@@ -21,6 +22,7 @@ const Routers = (props) => {
         <Route exact path="/portfolio/:name">
           <PortfolioModal />
         </Route>
+        <Route component={NotFound} />
       </Switch>
       {isModal ? (
         <Route exact path="/portfolio/:name">
