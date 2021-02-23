@@ -38,7 +38,10 @@ const PORTFOLIO = [
   {
     src: '/assets/imgs/portfolio/groundworks.PNG',
     title: 'Groundworks',
-    popupImageSrc: ['/assets/imgs/portfolio/groundworks_home.PNG'],
+    popupImageSrc: [
+      '/assets/imgs/portfolio/groundworks_home.PNG',
+      '/assets/imgs/portfolio/groundworks2_home.PNG',
+    ],
     popupMissionText: 'Service for tracking the work of employees. Application and administrative web version.',
   	popupDbs: 'PostgreSQL',
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',
@@ -52,7 +55,7 @@ const PORTFOLIO = [
     title: 'Social Network',
     popupImageSrc: [
       '/assets/imgs/portfolio/social_home.png',
-      '/assets/imgs/portfolio/social_home2.png',
+      '/assets/imgs/portfolio/social2_home.png',
     ],
     popupMissionText: 'A new social network for communicating with friends, sharing photos, news, comments. Ability to create chats and groups.',
   	popupDbs: 'PostgreSQL',

@@ -4,7 +4,8 @@ import { ReactSVG } from "react-svg";
 import { Modal, ModalBody } from "reactstrap";
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import PORTFOLIO from "../../../constants/portfolio";
+import PORTFOLIO from "../../constants/portfolio";
+import "./PortfolioModal.scss";
 
 SwiperCore.use([Navigation]);
 
@@ -76,25 +77,35 @@ const PortfolioModal = () => {
               <div className="popup__bar"></div>
             </div>
 
-            <Swiper
-              navigation={{
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              }}
-            >
-              {popupImageSrc.map((item) => (
-                <SwiperSlide key={item} style={{ textAlign: "center" }}>
-                  <img src={item} alt={title} className="popup__img" />
-                </SwiperSlide>
-              ))}
+            {popupImageSrc.length > 1 ? (
+              <Swiper
+                navigation={{
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                }}
+              >
+                {popupImageSrc.map((item) => (
+                  <SwiperSlide key={item} className="popup__item" >
+                    <img src={item} alt={title} className="popup__img" />
+                  </SwiperSlide>
+                ))}
 
-              <div className="swiper-button-next">
-                <ReactSVG src="/assets/svgs/next-arrow.svg" />
+                <div className="swiper-button-next">
+                  <ReactSVG src="/assets/svgs/next-arrow.svg" />
+                </div>
+                <div className="swiper-button-prev">
+                  <ReactSVG src="/assets/svgs/prev-arrow.svg" />
+                </div>
+              </Swiper>
+            ) : (
+              <div className="popup__item">
+                <img
+                  src={popupImageSrc[0]}
+                  alt={title}
+                  className="popup__img-no-slide"
+                />
               </div>
-              <div className="swiper-button-prev">
-                <ReactSVG src="/assets/svgs/prev-arrow.svg" />
-              </div>
-            </Swiper>
+            )}
           </div>
 
           {popupSiteLink && (

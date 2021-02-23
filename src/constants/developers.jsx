@@ -50,7 +50,7 @@ const DEVELOPERS = [
     profession: 'Middle Front-End Developer'
   },
   {
-    img: '/assets/imgs/devs/evgenia_s.JPG',
+    img: '/assets/imgs/devs/evgenia_s.png',
     name: 'Evgenia Svirko',
     profession: 'Middle Front-End Developer'
   },
@@ -58,11 +58,6 @@ const DEVELOPERS = [
     img: '/assets/imgs/devs/pavlo_y.png',
     name: 'Pavlo Yakhontov',
     profession: 'Middle React Native Developer'
-  },
-  {
-    img: '/assets/imgs/devs/mykhaylo_z.jpeg',
-    name: 'Mykhaylo Zeykan',
-    profession: 'Middle Back-End Developer'
   },
   {
     img: '/assets/imgs/devs/oles_h.jpg',
@@ -90,11 +85,6 @@ const DEVELOPERS = [
     profession: 'Strong Junior Full-Stack Developer'
   },
   {
-    img: '/assets/imgs/devs/nata_p.jpg',
-    name: 'Nata Pavlovska',
-    profession: 'UI Designer, Illustrator'
-  },
-  {
     img: '/assets/imgs/devs/denis_t.jpg',
     name: 'Denis Tsymbalenko',
     profession: 'Junior Front-End Developer'
@@ -102,7 +92,17 @@ const DEVELOPERS = [
   {
     img: '/assets/imgs/devs/kyrylo_p.png',
     name: 'Kyrylo Potanin',
-    profession: 'Junior Full-stack Developer'
+    profession: 'Junior Full-Stack Developer'
+  },
+  {
+    img: '/assets/imgs/devs/ivan_sh.jpg',
+    name: 'Ivan Shevchenko',
+    profession: 'Junior Full-Stack Developer'
+  },
+  {
+    img: '/assets/imgs/devs/roman_p.jpg',
+    name: 'Roman Prystoinyi',
+    profession: 'Junior Full-Stack Developer'
   },
 ];
 
