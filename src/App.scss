@@ -37,8 +37,8 @@
     }
 
     @media(max-width: $sm) {
-      font-size: 30px;
-      line-height: 35px;
+      font-size: 60px;
+      line-height: 70px;
     }
   }
 
@@ -133,11 +133,10 @@
     }
   }
 
-  &__burger {
+  &__menu {
     display: none;
     width: 50px;
     height: 10px;
-    background: #fff;
     margin: auto 10px;
     cursor: pointer;
     position: relative;
@@ -153,15 +152,55 @@
       top: 15px;
     }
 
-    &:before {
-      top: 30px;
-    }
-
-    &--is-open {
-      + .navigation__inner {
-        transform: translateX(0);
+    &__burger {
+      background: #fff;
+      &:before {
+        top: 30px;
       }
     }
+
+    &__close {
+      &:before {
+        transform: rotate(45deg);
+      }
+  
+      &:after {
+        transform: rotate(-45deg);
+      }
+  
+      &--is-open {
+        + .navigation__inner {
+          transform: translateX(0);
+        }
+      }
+    }
+
+    @media(max-width: $md) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__close {
+    display: none;
+    width: 50px;
+    height: 10px;
+    margin: auto 10px;
+    cursor: pointer;
+    position: relative;
+    top: -15px;
+
+    &:after, &:before {
+      content: '';
+      width: 50px;
+      height: 10px;
+      background: #fff;
+      display: block;
+      position: absolute;
+      top: 15px;
+    }
+
+    
 
     @media(max-width: $md) {
       display: flex;
@@ -177,7 +216,9 @@
       position: absolute;
       top: 100%;
       right: 0;
+      width: 100%;
       padding: 5px 0;
+      background: rgba(0, 0, 0, 0.2);
       border-left: 1px solid rgba(255, 255, 255, 0.3);
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
       transition: transform .3s ease;
@@ -226,8 +267,11 @@
     }
 
     @media(max-width: $md) {
+      justify-content: center;
       margin: 0;
       padding: 5px 10px;
+      font-size: 20px;
+      height: 44px;
 
       &:before {
         display: none;

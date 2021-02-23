@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
 import SwiperCore, { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -78,8 +79,8 @@ const TopMenu = () => {
           <img src={navbar ? '/assets/svgs/logos/footer-logo.svg' : '/assets/imgs/navigation__logo.png'} alt="Logo" />
         </Link>
 
-        {open && <div onClick={toggleMenu} className="navigation__burger navigation__burger--is-open"></div>}
-        {!open && <div onClick={toggleMenu} className="navigation__burger"></div>}
+        {open && <div onClick={toggleMenu} className="navigation__menu navigation__menu__close navigation__menu__close--is-open"></div>}
+        {!open && <div onClick={toggleMenu} className="navigation__menu navigation__menu__burger"></div>}
         <div className="navigation__inner" ref={ref}>
           <Link
             onClick={toggleMenu}
@@ -301,4 +302,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default withRouter(App);

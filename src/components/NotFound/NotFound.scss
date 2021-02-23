@@ -1,0 +1,41 @@
+@import "../../vars";
+
+.not-found {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 72px 1fr;
+
+  &__navigation {
+    background: #3eb17a;
+    padding: 10px 30px;
+
+    &__logo > img {
+      height: 52px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 15px;
+
+    &__title {
+      font-weight: 700;
+      font-size: 60px;
+      color: #b9b9b9;
+    }
+
+    &__info {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+  }
+
+  &__footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}
