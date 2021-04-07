@@ -5,11 +5,6 @@ const DEVELOPERS = [
     profession: 'Business Owner'
   },
   {
-    img: '/assets/imgs/devs/roma_h.jpg',
-    name: 'Roma Humenuk',
-    profession: 'Product Manager'
-  },
-  {
     img: '/assets/imgs/devs/semen_y.png',
     name: 'Semen Yevmenenko',
     profession: 'Solution Architect'
