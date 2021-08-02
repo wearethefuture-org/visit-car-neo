@@ -5,11 +5,6 @@ const DEVELOPERS = [
     profession: 'Business Owner'
   },
   {
-    img: '/assets/imgs/devs/semen_y.png',
-    name: 'Semen Yevmenenko',
-    profession: 'Solution Architect'
-  },
-  {
     img: '/assets/imgs/devs/maxim_p.jpg',
     name: 'Maxim Polishchuk',
     profession: 'Chief Executive Officer'
@@ -30,29 +25,19 @@ const DEVELOPERS = [
     profession: 'Project Manager'
   },
   {
+    img: '/assets/imgs/devs/oksana_k.jpg',
+    name: 'Oksana Kuharets',
+    profession: 'Project Manager'
+  },
+  {
     img: '/assets/imgs/devs/dmitry_k.jpg',
-    name: ' Dmitry Katruk',
+    name: 'Dmitry Katruk',
     profession: 'AQA Java & Java Backend'
   },
   {
-    img: '/assets/imgs/devs/igor_n.jpg',
-    name: 'Igor Nerovnyi',
-    profession: 'Middle Front-End Developer'
-  },
-  {
-    img: '/assets/imgs/devs/nikolay_s.jpg',
-    name: 'Nikolay Strashok',
-    profession: 'Middle Front-End Developer'
-  },
-  {
-    img: '/assets/imgs/devs/evgenia_s.png',
-    name: 'Evgenia Svirko',
-    profession: 'Middle Front-End Developer'
-  },
-  {
-    img: '/assets/imgs/devs/pavlo_y.png',
-    name: 'Pavlo Yakhontov',
-    profession: 'Middle React Native Developer'
+    img: '/assets/imgs/devs/pavlo_m.jpg',
+    name: 'Pavlo Makukha',
+    profession: 'Full Stack Node.js Engineer'
   },
   {
     img: '/assets/imgs/devs/oles_h.jpg',
@@ -80,16 +65,6 @@ const DEVELOPERS = [
     profession: 'Strong Junior Full-Stack Developer'
   },
   {
-    img: '/assets/imgs/devs/denis_t.jpg',
-    name: 'Denis Tsymbalenko',
-    profession: 'Junior Front-End Developer'
-  },
-  {
-    img: '/assets/imgs/devs/kyrylo_p.png',
-    name: 'Kyrylo Potanin',
-    profession: 'Junior Full-Stack Developer'
-  },
-  {
     img: '/assets/imgs/devs/ivan_sh.jpg',
     name: 'Ivan Shevchenko',
     profession: 'Junior Full-Stack Developer'
@@ -97,6 +72,11 @@ const DEVELOPERS = [
   {
     img: '/assets/imgs/devs/roman_p.jpg',
     name: 'Roman Prystoinyi',
+    profession: 'Junior Full-Stack Developer'
+  },
+  {
+    img: '/assets/imgs/devs/timur_h.JPG',
+    name: 'Timur Kharkiv',
     profession: 'Junior Full-Stack Developer'
   },
 ];

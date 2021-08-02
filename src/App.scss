@@ -340,6 +340,7 @@
 
   &__img {
     position: relative;
+    width: 549px;
 
     @media(max-width: $lg) {
       max-width: 100%;
@@ -435,10 +436,7 @@
     font-size: 24px;
     line-height: 38px;
 
-    span {
-      font-family: Hiragino, sans-serif;
-      font-size: 100px;
-      color: #3EB17A;
+    &-right {
       margin-top: 15px;
       margin-right: 5px;
 
@@ -447,6 +445,17 @@
         margin-top: 0;
         margin-right: 0;
       }
+    }
+
+    &-left {
+      margin-top: 96px;
+      margin-bottom: -30px;
+    }
+
+    span {
+      font-family: Hiragino, sans-serif;
+      font-size: 100px;
+      color: #3EB17A;
     }
 
     @media(max-width: $sm) {
@@ -643,10 +652,6 @@
       width: 100%;
       height: 80px;
       margin-bottom: 10px;
-    }
-
-    &:hover {
-      background: linear-gradient(258.61deg, #3EB17A 0.96%, #348C5F 87.6%);
     }
 
     &:nth-child(odd) {
