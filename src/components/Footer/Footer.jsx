@@ -2,11 +2,11 @@ import React from "react";
 import { ReactSVG } from "react-svg";
 import "./Footer.scss";
 
-const Footer = () => (
+const Footer = ({ onClickScroller }) => (
   <footer className="footer">
     <div className="footer__container">
       <div className="footer__inner">
-        <ReactSVG src="/assets/svgs/logos/footer-logo.svg" />
+        <ReactSVG src="/assets/svgs/logos/footer-logo.svg" onClick={onClickScroller} className="footer__logo" />
         <div className="footer__social">
           <a
             href="https://www.youtube.com/channel/UCykSqjhkEPISbFInjMUdUqw"
@@ -29,7 +29,12 @@ const Footer = () => (
             />
           </a>
         </div>
-        <div className="footer__mail">weathefuture@gmail.com</div>
+        <div className="footer__mail">
+          <a href="mailto:weathefuture@gmail.com">
+            weathefuture@gmail.com
+          </a>
+        </div>
+        
         <div className="footer__text">
           © {new Date().getFullYear()}, We Are The Future. All rights reserved
         </div>

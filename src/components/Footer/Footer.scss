@@ -32,6 +32,10 @@
     }
   }
 
+  &__logo {
+    cursor: pointer;
+  }
+
   &__social {
     display: inline-flex;
     margin-top: 10px;
@@ -50,6 +54,11 @@
   &__mail {
     margin-right: auto;
     margin-left: 50px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
 
     @media(max-width: $lg) {
       margin-left: 25px;

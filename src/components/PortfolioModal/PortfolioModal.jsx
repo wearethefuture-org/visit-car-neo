@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useHistory, useParams, withRouter } from "react-router-dom";
+import { scroller } from "react-scroll";
 import { ReactSVG } from "react-svg";
 import { Modal, ModalBody } from "reactstrap";
 import SwiperCore, { Navigation } from "swiper";
@@ -38,6 +39,17 @@ const PortfolioModal = () => {
   const toggle = () => {
     history.push("/");
   };
+
+  const scrollToContactUs = () => {
+    toggle();
+
+    scroller.scrollTo('contact-us', {
+      duration: 500,
+      delay: 0,
+      offset: -120,
+      smooth: true
+    });
+  }
 
   const {
     title,
@@ -165,12 +177,12 @@ const PortfolioModal = () => {
           </div>
 
           <div className="popup__contact">
-            <div className="popup__subtitle popup__subtitle--contact">
-              Interested?
-            </div>
-            <a href="mailto:weathefuture@gmail.com" className="popup__email">
+            <button onClick={toggle} className="popup__exit">
+              Exit
+            </button>
+            <button onClick={scrollToContactUs} className="popup__email">
               Contact us
-            </a>
+            </button>
           </div>
         </ModalBody>
       </Modal>

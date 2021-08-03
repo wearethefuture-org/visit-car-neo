@@ -188,15 +188,6 @@
       font-size: 24px;
       line-height: 30px;
     }
-
-    &--contact {
-      width: 235px;
-
-      @media (max-width: $sm) {
-        width: 100%;
-        text-align: center;
-      }
-    }
   }
 
   &__paragraph {
@@ -265,7 +256,6 @@
   &__contact {
     display: flex;
     justify-content: center;
-    align-items: center;
     margin-top: 50px;
 
     @media (max-width: $sm) {
@@ -274,15 +264,20 @@
     }
   }
 
+  &__exit,
   &__email {
     font-weight: 300;
     font-size: 26px;
     line-height: 31px;
     text-transform: uppercase;
-    color: #fff;
-    background: #3eb17a;
     padding: 20px 70px;
     transition: box-shadow 0.3s ease;
+    border: none;
+    outline: none;
+
+    &:focus {
+      outline: none;
+    }
 
     @media (max-width: $lg) {
       padding: 20px 60px;
@@ -295,6 +290,22 @@
       margin-top: 10px;
       font-size: 20px;
     }
+  }
+
+  &__exit {
+    margin-right: 20px;
+    color: rgb(44, 41, 41);
+    background: #fff;
+
+    &:hover {
+      text-decoration: none;
+      box-shadow: 0 0 20px rgb(180, 180, 180);
+    }
+  }
+
+  &__email {
+    color: #fff;
+    background: #3eb17a;
 
     &:hover {
       text-decoration: none;

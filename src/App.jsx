@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
-import SwiperCore, { Navigation } from 'swiper';
+import SwiperCore, { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link, scroller, Element } from "react-scroll";
 import './App.scss';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
@@ -19,7 +19,7 @@ import DEVELOPERS from './constants/developers';
 import WORKS_WITH from './constants/works-with';
 import PORTFOLIO from './constants/portfolio';
 
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, Autoplay]);
 
 const Header = ({ onClickScroller }) => (
   <header className="header" id="header">
@@ -144,7 +144,7 @@ const TopMenu = () => {
             to="contact-us"
             spy={true}
             smooth={true}
-            offset={-390}
+            offset={-120}
             duration={500}
           >Contact Us</Link>
         </div>
@@ -171,17 +171,18 @@ const AboutUs = () => (
       </div>
 
       <div className="about-us__quote">
-        <span>“</span>
+        <span className="about-us__quote-right">“</span>
         <div>
           <div className="about-us__italic">The best way to predict the future is to create it</div>
           <div>Alan Kay</div>
         </div>
+        <span className="about-us__quote-left">”</span>
       </div>
     </div>
   </section>
 );
 
-const Technologies = () => (
+const Technologies = ({ onClickScroller }) => (
   <section className="technologies" id="technologies">
     <div className="technologies__container">
       <h2 className="technologies__title">Technologies</h2>
@@ -193,7 +194,7 @@ const Technologies = () => (
         ))}
       </div>
 
-      <button type="button" className="technologies__contact" onClick={() => scroll.scrollToBottom()}>Contact Us</button>
+      <button type="button" className="technologies__contact" onClick={() => onClickScroller('contact-us')}>Contact Us</button>
     </div>
   </section>
 );
@@ -205,6 +206,9 @@ const Portfolio = () => (
 
       <div className="portfolio__inner">
         <Swiper
+          autoplay={{
+            delay: 3000
+          }}
           spaceBetween={50}
           slidesPerView={1}
           navigation={{
@@ -288,16 +292,27 @@ const App = () => {
     });
   };
 
+  const scrollToElement = (element) => {
+    scroller.scrollTo(element, {
+      duration: 500,
+      delay: 0,
+      offset: -120,
+      smooth: true
+    });
+  }
+
   return (
     <>
       <Header onClickScroller={moveToAbout} />
       <AboutUs />
-      <Technologies />
+      <Technologies onClickScroller={scrollToElement} />
       <Portfolio />
       <WorkWith />
       <Team />
-      <Contact />
-      <Footer />
+      <Element name="contact-us">
+        <Contact />
+      </Element>
+      <Footer onClickScroller={moveToAbout} />
     </>
   );
 };
