@@ -60,7 +60,10 @@ const PORTFOLIO = [
   {
     src: '/assets/imgs/portfolio/dental.png',
     title: 'UAE Dentist',
-    popupImageSrc: ['/assets/imgs/portfolio/dental2_home.JPG'],
+    popupImageSrc: [
+      '/assets/imgs/portfolio/dental_home.JPG',
+      '/assets/imgs/portfolio/dental2_home.JPG',
+    ],
     popupMissionText: '(UAE project)<br/>Service for finding a dentist by the location of the dentist, or the clinic in which he works the client part (front-end and back-end) and the admin panel (front-end and back-end) were developed a lot of different functionality has been implemented:<br/>- Find the nearest dental clinics according to my location<br/>- View the location of the clinics on a map<br/>- Able to change the city or area<br/>- See the available treatments for each clinic<br/>- Filter available appointments based on my date input<br/>- Filter clinics based on supported insurance options<br/>- Filter clinics based on language spoken<br/>- Filter dentist based on nationality<br/>- Filter dentist based on gender<br/>- Filter dentist based on language spoken<br/>- Filter dentist based on available dates<br/>- Search for different treaments e.g.  Urgent care, General check-up, Hygienist Visit, Teeth Whitening.<br/>- Request a booking for future<br/>- Book available appointment for today or tomorrow<br/>- Verify my booking via E-mail account<br/>- Verify my booking via Apple account<br/>- Verify my booking via Google account<br/>- Verify my booking via Facebook account<br/>- Complete the booking form before confirming the appointment<br/>- Booking confirmation sent to me by E-mail<br/>- Verify my booking via WhatsApp number<br/>- Leave a review after my visit',
   	popupDbs: 'MongoDB',
   	popupDevKnowledge: 'OOP & OOD / TDD & BDD / API (REST API & Postman & Swagger & API Doc)',

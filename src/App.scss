@@ -448,8 +448,12 @@
     }
 
     &-left {
-      margin-top: 96px;
+      margin-top: 80px;
       margin-bottom: -30px;
+
+      @media(max-width: $sm) {
+        margin-top: 96px;
+      }
     }
 
     span {
