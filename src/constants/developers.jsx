@@ -26,7 +26,7 @@ const DEVELOPERS = [
   },
   {
     img: '/assets/imgs/devs/oksana_k.jpg',
-    name: 'Oksana Kuharets',
+    name: 'Oksana Fedoryshyna',
     profession: 'Project Manager'
   },
   {
@@ -37,11 +37,16 @@ const DEVELOPERS = [
   {
     img: '/assets/imgs/devs/ivan_sh.jpg',
     name: 'Ivan Shevchenko',
-    profession: 'Junior Full-Stack Developer'
+    profession: 'Strong Middle Full-Stack Developer'
   },
   {
     img: '/assets/imgs/devs/roman_p.jpg',
     name: 'Roman Prystoinyi',
+    profession: 'Strong Middle Full-Stack Developer'
+  },
+  {
+    img: '/assets/imgs/devs/ivan_m.jpg',
+    name: 'Ivan Melnychuk',
     profession: 'Junior Full-Stack Developer'
   },
 ];
