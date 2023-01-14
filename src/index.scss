@@ -1,39 +1,39 @@
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('/fonts/HelveticaNeue.eot');
-  src: url('/fonts/HelveticaNeue.eot?iefix') format('eot'),
-  url('/fonts/HelveticaNeue.woff') format('woff'),
-  url('/fonts/HelveticaNeue.ttf') format('truetype'),
-  url('/fonts/HelveticaNeue.svg#webfont') format('svg');
+  src: url('../public/fonts/HelveticaNeue.eot');
+  src: url('../public/fonts/HelveticaNeue.eot?iefix') format('eot'),
+  url('../public/fonts/HelveticaNeue.woff') format('woff'),
+  url('../public/fonts/HelveticaNeue.ttf') format('truetype'),
+  url('../public/fonts/HelveticaNeue.svg#webfont') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('/fonts/HelveticaNeue-Thin.eot');
-  src: url('/fonts/HelveticaNeue-Thin.eot?iefix') format('eot'),
-  url('/fonts/HelveticaNeue-Thin.woff') format('woff'),
-  url('/fonts/HelveticaNeue-Thin.ttf') format('truetype'),
-  url('/fonts/HelveticaNeue-Thin.svg#webfont') format('svg');
+  src: url('../public/fonts/HelveticaNeue-Thin.eot');
+  src: url('../public/fonts/HelveticaNeue-Thin.eot?iefix') format('eot'),
+  url('../public/fonts/HelveticaNeue-Thin.woff') format('woff'),
+  url('../public/fonts/HelveticaNeue-Thin.ttf') format('truetype'),
+  url('../public/fonts/HelveticaNeue-Thin.svg#webfont') format('svg');
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Helvetica Neue';
-  src: url('/fonts/HelveticaNeue-Light.eot');
-  src: url('/fonts/HelveticaNeue-Light.eot?iefix') format('eot'),
-  url('/fonts/HelveticaNeue-Light.woff') format('woff'),
-  url('/fonts/HelveticaNeue-Light.ttf') format('truetype'),
-  url('/fonts/HelveticaNeue-Light.svg#webfont') format('svg');
+  src: url('../public/fonts/HelveticaNeue-Light.eot');
+  src: url('../public/fonts/HelveticaNeue-Light.eot?iefix') format('eot'),
+  url('../public/fonts/HelveticaNeue-Light.woff') format('woff'),
+  url('../public/fonts/HelveticaNeue-Light.ttf') format('truetype'),
+  url('../public/fonts/HelveticaNeue-Light.svg#webfont') format('svg');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Hiragino';
-  src: url('/fonts/hiragino-maru-gothic-pron-w4.otf');
+  src: url('../public/fonts/hiragino-maru-gothic-pron-w4.otf');
   font-weight: normal;
   font-style: normal;
 }

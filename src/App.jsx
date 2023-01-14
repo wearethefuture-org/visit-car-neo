@@ -5,8 +5,8 @@ import SwiperCore, { Navigation, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link, scroller, Element } from "react-scroll";
 import './App.scss';
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
+import 'swiper/scss'
+import 'swiper/scss/navigation'
 
 import InfoCard from './components/InfoCard/InfoCard';
 import PersonCard from './components/PersonCard/PersonCard';
@@ -72,7 +72,6 @@ const TopMenu = () => {
           className="navigation__logo"
           to="header"
           spy={true}
-          smooth={true}
           offset={-112}
           duration={500}
         >
@@ -88,7 +87,6 @@ const TopMenu = () => {
             activeClass="navigation__item--is-active"
             to="about-us"
             spy={true}
-            smooth={true}
             offset={-112}
             duration={500}
           >About Us</Link>
@@ -99,7 +97,6 @@ const TopMenu = () => {
             activeClass="navigation__item--is-active"
             to="technologies"
             spy={true}
-            smooth={true}
             offset={-112}
             duration={500}
           >Technologies</Link>
@@ -110,7 +107,6 @@ const TopMenu = () => {
             activeClass="navigation__item--is-active"
             to="portfolio"
             spy={true}
-            smooth={true}
             offset={-112}
             duration={500}
           >Portfolio</Link>
@@ -121,7 +117,6 @@ const TopMenu = () => {
             activeClass="navigation__item--is-active"
             to="work-with"
             spy={true}
-            smooth={true}
             offset={-112}
             duration={500}
           >Our Clients</Link>
@@ -132,7 +127,6 @@ const TopMenu = () => {
             activeClass="navigation__item--is-active"
             to="team"
             spy={true}
-            smooth={true}
             offset={-250}
             duration={500}
           >Our Team</Link>
@@ -143,7 +137,6 @@ const TopMenu = () => {
             activeClass="navigation__item--is-active"
             to="contact-us"
             spy={true}
-            smooth={true}
             offset={-120}
             duration={500}
           >Contact Us</Link>
@@ -297,7 +290,6 @@ const App = () => {
       duration: 500,
       delay: 0,
       offset: -120,
-      smooth: true
     });
   }
 

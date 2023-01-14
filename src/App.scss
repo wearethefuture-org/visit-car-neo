@@ -2,7 +2,7 @@
 
 .header {
   height: 100vh;
-  background-image: url('/assets/imgs/header-bg.jpg');
+  background-image: url('../public/assets/imgs/header-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -230,6 +230,7 @@
     color: #fff;
     font-weight: 300;
     font-size: 16px;
+    text-decoration: none;
     line-height: 19px;
     margin-left: 30px;
     position: relative;
@@ -534,8 +535,7 @@
   }
 
   &__inner {
-
-    .swiper-container {
+    .swiper-container, .swiper {
       padding: 60px 40px;
 
       @media(max-width: $sm) {
@@ -564,7 +564,7 @@
   padding-top: 90px;
   padding-bottom: 90px;
   color: #fff;
-  background: url('/assets/imgs/waf_logo_white.png') #32423A no-repeat 35px 95%;
+  background: url('../public/assets/imgs/waf_logo_white.png') #32423A no-repeat 35px 95%;
 
   @media(max-width: $sm) {
     padding-top: 60px;
