@@ -47,7 +47,6 @@ const PortfolioModal = () => {
       duration: 500,
       delay: 0,
       offset: -120,
-      smooth: true
     });
   }
 
