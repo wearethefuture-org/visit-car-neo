@@ -30,7 +30,7 @@ const DEVELOPERS = [
     profession: 'Middle Full-Stack Developer'
   },
   {
-    img: '/assets/imgs/devs/ivan_m.jpg',
+    img: '/assets/imgs/devs/ivan_mln.jpg',
     name: 'Ivan Melnychuk',
     profession: 'Middle Full-Stack Developer'
   },
